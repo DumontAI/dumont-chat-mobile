@@ -24,14 +24,15 @@ import {
     ServerScreen,
     ThreadScreen,
 } from '@support/ui/screen';
-import {isAndroid, timeouts, wait} from '@support/utils';
+import {timeouts, wait} from '@support/utils';
 import {by, device, element, waitFor} from 'detox';
 
 // Lock wait is up to 20m; leave headroom for enable/setup after acquire.
 jest.setTimeout(timeouts.ONE_MIN * 30);
 
-// Skip Android: CI run 30447839548 — suite flaking on Detox Android (MM-T6209_1 … MM-T6213_1).
-(isAndroid() ? describe.skip : describe)('Classification Banner - Visibility Across Screens', () => {
+// FeatureFlagClassificationMarkings toggles require a Mattermost server restart;
+// CI workers cannot restart Matterwick hosts. Re-enable on a provisioned server.
+describe.skip('Classification Banner - Visibility Across Screens', () => {
     const serverOneDisplayName = 'Server 1';
     let lockOwner = '';
     let testChannel: any;

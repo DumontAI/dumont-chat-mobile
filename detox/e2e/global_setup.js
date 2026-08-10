@@ -198,11 +198,10 @@ async function serverSetup() {
     }
 
     try {
-        // Keep shared-server defaults aligned with detox/provision/server-config.ts.
-        // ClassificationMarkings alone does not show a banner (needs property fields).
+        // FeatureFlags (e.g. ClassificationMarkings) require a Mattermost server restart
+        // to take effect; CI workers cannot restart Matterwick hosts, so do not patch them here.
         await axios.put(`${SITE_URL}/api/v4/config/patch`, {
             ConnectedWorkspacesSettings: {EnableRemoteClusterService: true},
-            FeatureFlags: {ClassificationMarkings: true},
             ServiceSettings: {
                 EnableCrossTeamSearch: true,
                 CollapsedThreads: 'always_on',
