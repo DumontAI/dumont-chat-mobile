@@ -12,7 +12,13 @@ const LOCK_NAME = 'classification';
 // shared Matterwick hosts. Suites set jest.setTimeout(30m) and comment
 // "Lock wait is up to 20m" so peer classification specs can serialize.
 const DEFAULT_TIMEOUT_MS = timeouts.ONE_MIN * 20;
-const DEFAULT_TTL_MS = timeouts.ONE_MIN * 30;
+
+// Must outlast the longest hold a caller can legitimately take, or the lock expires
+// mid-suite and a waiting shard steals it while the owner is still mutating shared
+// server config. Every caller sets jest.setTimeout(30m), so the TTL covers that plus
+// margin. Recovering a lock leaked by a cancelled run is the acquire budget's job,
+// not the TTL's.
+const DEFAULT_TTL_MS = timeouts.ONE_MIN * 35;
 const DEFAULT_POLL_MS = timeouts.TWO_SEC;
 
 // Parallel CI runs share the same cloud admin preference. Steal a lock held by
