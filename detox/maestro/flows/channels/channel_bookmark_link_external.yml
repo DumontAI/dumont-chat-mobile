@@ -26,7 +26,6 @@
 #   - channel_header.bookmarks.list
 tags:
   - MM-T5611
-  - shared
 appId: ${MAESTRO_APP_ID}
 ---
 # # Log in and navigate to the test channel
