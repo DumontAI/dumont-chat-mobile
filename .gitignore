@@ -1,4 +1,7 @@
-assets/override
+# Dumont: the override tree IS our product branding, not a build-time secret.
+# Upstream ignores it because they inject theirs from CI secrets; we track ours
+# so a clean clone builds a Dumont-branded app with no extra steps.
+# assets/override
 dist
 build-ios
 *.zip

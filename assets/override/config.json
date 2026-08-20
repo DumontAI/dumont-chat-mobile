@@ -1,0 +1,9 @@
+{
+  "DefaultServerUrl": "https://app.dumont.chat",
+  "DefaultServerName": "Dumont Chat",
+  "AutoSelectServerUrl": true,
+  "ShowOnboarding": false,
+  "SentryEnabled": false,
+  "SentryDsnIos": "",
+  "SentryDsnAndroid": ""
+}
