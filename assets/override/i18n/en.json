@@ -1,0 +1,19 @@
+{
+  "about.mattermost": "Dumont Chat",
+  "extension.no_memberships.description": "To share content, you'll need to be a member of a team on a Dumont Chat server.",
+  "extension.no_servers.description": "To share content, you'll need to be logged in to a Dumont Chat server.",
+  "invite_people_to_team.message": "Here’s a link to collaborate and communicate with us on Dumont Chat.",
+  "mobile.calls_mic_error": "To participate, open Settings to grant Dumont Chat access to your microphone.",
+  "mobile.calls.foreground_service.channel_name": "Dumont Chat Calls",
+  "mobile.calls.foreground_service.title": "Dumont Chat",
+  "mobile.managed.not_secured.android": "This device must be secured with a screen lock to use Dumont Chat.",
+  "mobile.managed.not_secured.ios": "This device must be secured with biometrics or passcode to use Dumont Chat.\n\nGo to Settings > Face ID & Passcode.",
+  "mobile.server_upgrade.description": "\nA server upgrade is required to use the Dumont Chat app. Please ask your System Administrator for details.\n",
+  "onboaring.welcome_description": "Dumont Chat is the private messaging space for the Dumont team and its partners.",
+  "rate.title": "Enjoying Dumont Chat?",
+  "share_extension.channel_error": "You are not a member of a team on the selected server. Select another server or open Dumont Chat to join a team.",
+  "about.teamEditionLearn": "Learn more about Dumont at ",
+  "about.planNameLearn": "Learn more about Dumont {planName} at ",
+  "settings.about.powered_by": "{site} is powered by Dumont Chat",
+  "settings.notice_text": "Dumont Chat is made possible by the open source software used in our {platform} and {mobile}."
+}
