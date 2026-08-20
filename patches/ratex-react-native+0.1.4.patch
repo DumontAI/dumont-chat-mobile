@@ -1,46 +1,39 @@
 diff --git a/node_modules/ratex-react-native/ios/RaTeXViewManager.mm b/node_modules/ratex-react-native/ios/RaTeXViewManager.mm
-index 10323ea..99d35a5 100644
+index 00fbe5c..50694f2 100644
 --- a/node_modules/ratex-react-native/ios/RaTeXViewManager.mm
 +++ b/node_modules/ratex-react-native/ios/RaTeXViewManager.mm
-@@ -14,7 +14,11 @@
+@@ -17,7 +17,16 @@
  #endif
  
  // Swift-generated header (module name derived from podspec/target name)
--#import "ratex_react_native-Swift.h"
-+#if __has_include("ratex_react_native-Swift.h")
-+#import <ratex_react_native-Swift.h>
-+#else
++// CocoaPods builds this pod as a static *framework*, so the generated Swift
++// header lands in ratex_react_native.framework/Headers and a quoted import
++// cannot see it - the .mm compiles before the header is copied into place.
++// The module-qualified form resolves through the framework module instead.
++// __has_include keeps the quoted fallback for non-framework builds.
++#if __has_include(<ratex_react_native/ratex_react_native-Swift.h>)
 +#import <ratex_react_native/ratex_react_native-Swift.h>
++#else
+ #import "ratex_react_native-Swift.h"
 +#endif
  
  // ---------------------------------------------------------------------------
  // MARK: - New Architecture (Fabric)
 diff --git a/node_modules/ratex-react-native/ratex-react-native.podspec b/node_modules/ratex-react-native/ratex-react-native.podspec
-index 09ce3d9..7e4bc0c 100644
+index 09ce3d9..c56a08a 100644
 --- a/node_modules/ratex-react-native/ratex-react-native.podspec
 +++ b/node_modules/ratex-react-native/ratex-react-native.podspec
-@@ -13,8 +13,23 @@ Pod::Spec.new do |s|
-   s.source         = { :git => "https://github.com/erweixin/RaTeX.git", :tag => s.version.to_s }
+@@ -14,6 +14,13 @@ Pod::Spec.new do |s|
  
    # Swift source files + ObjC++ bridge
--  s.source_files   = "ios/**/*.{h,m,mm,swift}"
-+  s.source_files   = "ios/*.{h,m,mm,swift}"
+   s.source_files   = "ios/**/*.{h,m,mm,swift}"
++  # The glob above is recursive, so it also matches the headers *inside*
++  # the vendored XCFramework - once per slice (ios-arm64 and the simulator
++  # slice). CocoaPods then emits two copy commands for the same
++  # ratex_react_native.framework/Headers/ratex.h and the build fails with
++  # "Multiple commands produce". The xcframework ships its own headers, so
++  # they must not be compiled in as pod sources.
++  s.exclude_files  = "ios/RaTeX.xcframework/**/*"
    s.swift_version  = "5.9"
-+  s.module_name    = "ratex_react_native"
-+
-+  s.pod_target_xcconfig = {
-+    "USE_HEADERMAP" => "YES",
-+    "DEFINES_MODULE" => "YES",
-+    "SWIFT_COMPILATION_MODE" => "wholemodule",
-+    "BUILD_LIBRARY_FOR_DISTRIBUTION" => "YES",
-+    "OTHER_SWIFT_FLAGS" => "-no-verify-emitted-module-interface",
-+  }
-+
-+  # Expose the Swift Compatibility Header directory so that RaTeXViewManager.mm
-+  # can resolve the #import "ratex_react_native-Swift.h" quoted import.
-+  s.user_target_xcconfig = {
-+    "HEADER_SEARCH_PATHS" => '"${PODS_CONFIGURATION_BUILD_DIR}/ratex-react-native/Swift Compatibility Header"',
-+  }
  
    # Prebuilt static library (libratex_ffi.a) packaged as XCFramework
-   s.vendored_frameworks = "ios/RaTeX.xcframework"
