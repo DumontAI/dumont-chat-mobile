@@ -1,10 +1,13 @@
 {
-  "DefaultServerUrl": "https://app.dumont.chat",
-  "DefaultServerName": "Dumont Chat",
-  "AutoSelectServerUrl": true,
-  "ShowOnboarding": false,
-  "SentryEnabled": false,
-  "SentryDsnIos": "",
-  "SentryDsnAndroid": "",
-  "WebsiteURL": "https://dumont.au"
+    "DefaultServerUrl": "https://app.dumont.chat",
+    "DefaultServerName": "Dumont Chat",
+    "AutoSelectServerUrl": true,
+    "ShowOnboarding": false,
+    "SentryEnabled": false,
+    "SentryDsnIos": "",
+    "SentryDsnAndroid": "",
+    "WebsiteURL": "https://dumont.au",
+    "ForceSsoProvider": "GITLAB",
+    "AuthUrlScheme": "dumontauth://",
+    "AuthUrlSchemeDev": "dumontauthbeta://"
 }

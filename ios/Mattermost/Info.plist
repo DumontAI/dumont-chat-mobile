@@ -28,11 +28,11 @@
 	<array>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>com.mattermost</string>
+			<string>chat.dumont.app</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>mattermost</string>
-				<string>mmauth</string>
+				<string>dumontchat</string>
+				<string>dumontauth</string>
 			</array>
 		</dict>
 	</array>

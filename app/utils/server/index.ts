@@ -3,6 +3,7 @@
 
 import {Alert, type AlertButton} from 'react-native';
 
+import LocalConfig from '@assets/config.json';
 import {Screens, Sso, SupportedServer, Launch} from '@constants';
 import {navigateToScreen} from '@screens/navigation';
 import {getErrorMessage} from '@utils/errors';
@@ -53,7 +54,11 @@ export async function addNewServer(theme: Theme, serverUrl?: string, displayName
 export function loginOptions(config: ClientConfig, license: ClientLicense) {
     const isLicensed = license.IsLicensed === 'true';
     const samlEnabled = config.EnableSaml === 'true' && isLicensed && license.SAML === 'true';
-    const gitlabEnabled = config.EnableSignUpWithGitLab === 'true';
+    // Dumont Auth reaches the server through its GitLab OAuth provider. Server
+    // v11 dropped EnableSignUpWithGitLab from the client config payload, so the
+    // button disappeared even though /oauth/gitlab/mobile_login still works.
+    // ForceSsoProvider re-enables it for our own builds.
+    const gitlabEnabled = config.EnableSignUpWithGitLab === 'true' || LocalConfig.ForceSsoProvider === Sso.GITLAB;
     const isMinServerVersionForCloudOAuthChanges = isMinimumServerVersion(config.Version, 7, 6);
     let googleEnabled = false;
     let o365Enabled = false;
