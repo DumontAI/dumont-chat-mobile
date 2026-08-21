@@ -1,0 +1,20 @@
+{
+    "about.mattermost": "Dumont Chat",
+    "about.planNameLearn": "Kom meer te weten over Dumont Chat {planName} op ",
+    "about.teamEditionLearn": "Word lid van de Dumont Chat-gemeenschap op ",
+    "extension.no_memberships.description": "Om inhoud te delen moet je lid zijn van een team op een Dumont Chat-server.",
+    "extension.no_servers.description": "Om inhoud te delen, moet je ingelogd zijn op een Dumont Chat-server.",
+    "invite_people_to_team.message": "Hier is een link om met ons samen te werken en te communiceren op Dumont Chat.",
+    "mobile.calls.foreground_service.channel_name": "Dumont Chat-gesprekken",
+    "mobile.calls.foreground_service.title": "Dumont Chat",
+    "mobile.calls_mic_error": "Om deel te nemen, open Instellingen om Dumont Chat toegang te geven tot jouw microfoon.",
+    "mobile.managed.not_secured.android": "Dit apparaat moet eerst beveiligd worden met een schermvergrendeling, zodat je Dumont Chat kunt gebruiken.",
+    "mobile.managed.not_secured.ios": "Dit apparaat moet beveiligd zijn met biometrie of een wachtwoord om Dumont Chat te kunnen gebruiken.\n\nGa naar Instellingen > Face ID & Wachtwoordcode.",
+    "mobile.server_upgrade.description": "\nEen server upgrade is vereist om de Dumont Chat app te gebruiken. Vraag jouw systeembeheerder voor details.\n",
+    "onboaring.welcome_description": "Dumont Chat is een open source platform voor samenwerking tussen ontwikkelaars. Veilig, flexibel en geïntegreerd met jouw tools.",
+    "rate.title": "Vind je Dumont Chat fijn?",
+    "settings.about.powered_by": "{site} wordt aangedreven door Dumont Chat",
+    "settings.notice_text": "Dumont Chat wordt mogelijk gemaakt door de open source software die gebruikt wordt in ons {platform} en {mobile}.",
+    "share_extension.channel_error": "Je bent geen lid van een team op de geselecteerde server. Selecteer een andere server of open Dumont Chat om lid te worden van een team.",
+    "mobile.login_options.gitlab": "Dumont Auth"
+}

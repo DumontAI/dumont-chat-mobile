@@ -1,0 +1,18 @@
+{
+    "about.mattermost": "Dumont Chat",
+    "about.planNameLearn": "Şuradan Dumont Chat {planName} ile ilgili bilgi alabilirsiniz ",
+    "about.teamEditionLearn": "Şuradaki Dumont Chat topluluğuna katılın ",
+    "extension.no_memberships.description": "İçerik paylaşabilmek için bir Dumont Chat sunucusundaki bir takımın üyesi olmalısınız.",
+    "extension.no_servers.description": "İçerik paylaşabilmek için bir Dumont Chat sunucusundaki oturum açmış olmalısınız.",
+    "invite_people_to_team.message": "Dumont Chat üzerine bizimle işbirliği yapmak ve iletişim kurmak için bağlantı.",
+    "mobile.calls_mic_error": "Katılmak için, Ayarlar bölümüne giderek Dumont Chat için mikrofona erişme izni verin.",
+    "mobile.managed.not_secured.android": "Bu aygıtta Dumont Chat kullanılabilmesi için ekran kilidi güvenliğinin etkinleştirilmesi gerekir.",
+    "mobile.managed.not_secured.ios": "Bu aygıtta Dumont Chat kullanılabilmesi için biyometri veya parola güvenliği açık olmalıdır.\n\nAyarlar > Face ID ve Parola bölümünden ayarlayabilirsiniz.",
+    "mobile.server_upgrade.description": "\nDumont Chat uygulamasını kullanmak için sunucunun güncellenmesi gerekiyor. Lütfen ayrıntılı bilgi almak için sistem yöneticiniz ile görüşün.\n",
+    "onboaring.welcome_description": "Dumont Chat, geliştiriciler arasında işbirliği sağlamayı amaçlayan açık kaynaklı bir platformdur. Güvenlidir, esnektir ve araçlarınızla bütünleşik çalışır.",
+    "rate.title": "Dumont Chat hoşunuza gidiyor mu?",
+    "settings.about.powered_by": "{site} sitesi Dumont Chat tarafından sunulmaktadır",
+    "settings.notice_text": "Dumont Chat kullandığımız {platform} ve {mobile} üzerinde açık kaynaklı yazılım sayesinde var.",
+    "share_extension.channel_error": "Seçilmiş sunucuda bir takımın üyesi değilsiniz. Başka bir sunucu seçin ya da bir takıma katılmak için Dumont Chat uygulamasını açın.",
+    "mobile.login_options.gitlab": "Dumont Auth"
+}

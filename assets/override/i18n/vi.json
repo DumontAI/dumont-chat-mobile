@@ -1,0 +1,19 @@
+{
+    "about.teamEditionLearn": "Tham gia cộng đồng Dumont Chat",
+    "extension.no_memberships.description": "Để chia sẻ nội dung, bạn cần phải là thành viên của một nhóm trên máy chủ Dumont Chat.",
+    "extension.no_servers.description": "Để chia sẻ nội dung, bạn cần đăng nhập vào máy chủ Dumont Chat.",
+    "invite_people_to_team.message": "Đây là một liên kết để cộng tác và giao tiếp với chúng tôi trên Dumont Chat.",
+    "mobile.android.photos_permission_denied_description": "Tải ảnh lên phiên bản Dumont Chat của bạn hoặc lưu chúng vào thiết bị của bạn. Mở Cài đặt để cấp quyền truy cập Đọc và ghi vào thư viện ảnh của bạn.",
+    "mobile.calls_mic_error": "Để tham gia, hãy mở Cài đặt để cấp quyền truy cập Dumont Chat vào micrô của bạn.",
+    "mobile.camera_photo_permission_denied_description": "Chụp ảnh và tải chúng lên phiên bản Dumont Chat của bạn hoặc lưu chúng vào thiết bị của bạn. Mở Cài đặt để cấp quyền truy cập Đọc và ghi máy ảnh của bạn cho Dumont Chat.",
+    "mobile.ios.photos_permission_denied_description": "Tải ảnh và video lên phiên bản Dumont Chat của bạn hoặc lưu chúng vào thiết bị của bạn. Mở Cài đặt để cấp quyền truy cập Đọc và ghi vào thư viện ảnh và video của bạn cho Dumont Chat.",
+    "mobile.managed.not_secured.android": "Thiết bị này phải được bảo mật bằng khóa màn hình để sử dụng Dumont Chat.",
+    "mobile.managed.not_secured.ios": "Thiết bị này phải được bảo mật bằng mật mã để sử dụng Dumont Chat.\n\nChuyển đến Cài đặt > Face ID & Mật mã.",
+    "mobile.server_upgrade.description": "\nCần nâng cấp máy chủ để sử dụng ứng dụng Dumont Chat. Vui lòng hỏi Quản trị viên hệ thống của bạn để biết chi tiết.\n",
+    "mobile.storage_permission_denied_description": "Tải tệp lên phiên bản Dumont Chat của bạn. Mở Cài đặt để cấp quyền truy cập Đọc và ghi tệp trên thiết bị này cho Dumont Chat.",
+    "onboaring.welcome_description": "Dumont Chat là một nền tảng mã nguồn mở dành cho sự hợp tác của các nhà phát triển. An toàn, linh hoạt và tích hợp với các công cụ của bạn.",
+    "rate.title": "Bạn thích Dumont Chat chứ?",
+    "settings.about.powered_by": "{site} được cung cấp bởi Dumont Chat",
+    "share_extension.channel_error": "Bạn không phải là thành viên của một nhóm trên máy chủ đã chọn. Chọn một máy chủ khác hoặc mở Dumont Chat để tham gia một nhóm.",
+    "mobile.login_options.gitlab": "Dumont Auth"
+}

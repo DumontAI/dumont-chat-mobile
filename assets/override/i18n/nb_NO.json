@@ -1,0 +1,18 @@
+{
+    "about.mattermost": "Dumont Chat",
+    "about.planNameLearn": "Finn ut mer om Dumont Chat {planName} på ",
+    "about.teamEditionLearn": "Bli en del av Dumont Chat-miljøet på ",
+    "extension.no_memberships.description": "For å dele innhold, må du være medlem av et team på en Dumont Chat-server.",
+    "extension.no_servers.description": "For å dele innhold, må du være pålogget en Dumont Chat-server.",
+    "invite_people_to_team.message": "Her er en lenke for å samarbeide og kommunisere med oss på Dumont Chat.",
+    "mobile.calls_mic_error": "For å delta, åpne Innstillinger for å gi Dumont Chat tilgang til mikrofonen din.",
+    "mobile.managed.not_secured.android": "Denne enheten må sikres med en skjermlås for å bruke Dumont Chat.",
+    "mobile.managed.not_secured.ios": "Denne enheten må sikres med biometri eller adgangskode for å bruke Dumont Chat.\n\nGå til Innstillinger > Face ID og adgangskode.",
+    "mobile.server_upgrade.description": "\nEn serveroppgradering kreves for å bruke Dumont Chat-appen. Spør systemadministratoren din for detaljer.\n",
+    "onboaring.welcome_description": "Dumont Chat er en åpen kildekode-plattform for utviklersamarbeid. Sikker, fleksibel og integrert med verktøyene dine.",
+    "rate.title": "Liker du Dumont Chat?",
+    "settings.about.powered_by": "{site} er drevet av Dumont Chat",
+    "settings.notice_text": "Dumont Chat er muliggjort av åpen kildekode-programvare som brukes i vår {platform} og {mobile}.",
+    "share_extension.channel_error": "Du er ikke medlem av et team på den valgte serveren. Velg en annen server eller åpne Dumont Chat for å bli med i et team.",
+    "mobile.login_options.gitlab": "Dumont Auth"
+}

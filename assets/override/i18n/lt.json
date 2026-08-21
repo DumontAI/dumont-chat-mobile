@@ -1,0 +1,7 @@
+{
+    "about.teamEditionLearn": "Prisijunkite prie Dumont Chat bendruomenės",
+    "mobile.android.photos_permission_denied_description": "Įkelkite nuotraukas į Dumont Chat arba išsaugokite jas savo prietaise. Atidarykite nustatymus, kad suteiktumėte {applicationName} skaitymo ir rašymo prieigą prie savo nuotraukų bibliotekos.",
+    "mobile.camera_photo_permission_denied_description": "Darykite nuotraukas ir įkelkite jas į savo Dumont Chat arba išsaugokite jas savo prietaise. Atidarykite nustatymus, kad suteiktumėte {applicationName} skaitymo ir rašymo prieigą prie fotoaparato.",
+    "mobile.managed.not_secured.android": "Kad galėtumėte naudoti Dumont Chat, šis įrenginys turi būti apsaugotas ekrano užraktu.",
+    "mobile.managed.not_secured.ios": "Šis įrenginys turi būti apsaugotas slaptažodžiu, kad galėtumėte naudoti Dumont Chat.\n\nEikite į Nustatymai > Veido ID ir slaptažodis."
+}

@@ -1,0 +1,8 @@
+{
+    "about.teamEditionLearn": "Liity Dumont Chat yhteisöön: ",
+    "extension.no_memberships.description": "Jotta voit jakaa sisältöä, sinun on oltava Dumont Chat-palvelimen joukkueen jäsen.",
+    "extension.no_servers.description": "Sisällön jakamiseksi tulee olla sisäänkirjautuneena Dumont Chat-palvelimelle.",
+    "invite_people_to_team.message": "Tässä on linkki, jonka avulla voit tehdä yhteistyötä ja kommunikoida kanssamme Dumont Chatissa.",
+    "onboaring.welcome_description": "Dumont Chat on avoimen lähdekoodin alusta kehittäjäyhteistyöhön. Turvallinen, joustava ja työkaluihisi integroitu.",
+    "settings.notice_text": "Dumont Chatin mahdollistavat {platform}- ja {mobile} käytettävät avoimen lähdekoodin ohjelmistot."
+}

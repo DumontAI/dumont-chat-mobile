@@ -1,0 +1,18 @@
+{
+    "about.mattermost": "Dumont Chat",
+    "about.planNameLearn": "Dumont Chat {planName} について詳しく知る: ",
+    "about.teamEditionLearn": "Dumont Chatコミュニティーに参加する: ",
+    "extension.no_memberships.description": "コンテンツを共有するには、Dumont Chatサーバー上のメンバになる必要があります。",
+    "extension.no_servers.description": "コンテンツを共有するには、Dumont Chatサーバーにログインする必要があります。",
+    "invite_people_to_team.message": "Dumont Chatでコラボレーションやコミュニケーションを行うためのリンクはこちらです。",
+    "mobile.calls_mic_error": "参加するには、設定を開いて、Dumont Chat にマイクへのアクセスを許可してください。",
+    "mobile.managed.not_secured.android": "このデバイスでDumont Chatを使うにはスクリーンロックを設定する必要があります。",
+    "mobile.managed.not_secured.ios": "このデバイスでDumont Chatを使うには生体認証かパスコードを設定する必要があります。\n\n設定 > Face IDとパスコード から設定してください。",
+    "mobile.server_upgrade.description": "\nDumont Chat appを使用するにはサーバーのアップグレードが必要です。詳しくはシステム管理者に問い合わせてください。\n",
+    "onboaring.welcome_description": "Dumont Chatは開発者のコラボレーションのためのオープンソースのプラットフォームです。セキュアで、柔軟で、さまざまなツールと連携することができます。",
+    "rate.title": "Dumont Chatを楽しんでいますか？",
+    "settings.about.powered_by": "{site} はDumont Chatを利用しています",
+    "settings.notice_text": "Dumont Chatはオープンソースとして {platform} と {mobile} で開発されています。",
+    "share_extension.channel_error": "あなたは選択したサーバーのチームのメンバーではありません。他のサーバーを選択するか、Dumont Chatを開いてチームに参加してください。",
+    "mobile.login_options.gitlab": "Dumont Auth"
+}

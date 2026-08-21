@@ -1,0 +1,16 @@
+{
+    "about.teamEditionLearn": "Únete a la comunidad Dumont Chat en",
+    "extension.no_memberships.description": "Para compartir contenidos, debe ser miembro de un equipo en un servidor Dumont Chat.",
+    "extension.no_servers.description": "Para compartir contenido, tendrás que iniciar sesión en un servidor Dumont Chat.",
+    "invite_people_to_team.message": "Aquí hay un enlace para colaborar y comunicarte con nosotros en Dumont Chat.",
+    "mobile.calls_mic_error": "Para participar, aber Ajustes para otorgar a Dumont Chat acceso a tu micrófono.",
+    "mobile.managed.not_secured.android": "Este dispositivo debe estar asegurado con un bloqueo de pantalla para utilizar Dumont Chat.",
+    "mobile.managed.not_secured.ios": "Este dispositivo debe estar protegido con un código de acceso para utilizar Dumont Chat.\n\nVaya a Configuración > Identificación Facial y clave de acceso.",
+    "mobile.server_upgrade.description": "\nSe requiere una actualización de servidor para usar la app Dumont Chat. Por favor solicita más detalles a tu Administrador del Sistema.\n",
+    "onboaring.welcome_description": "Dumont Chat es una plataforma de código abierto para la colaboración entre desarrolladores. Segura, flexible e integrada con sus herramientas.",
+    "rate.title": "¿Le gusta Dumont Chat?",
+    "settings.about.powered_by": "{site} es desarrollado por Dumont Chat",
+    "settings.notice_text": "Dumont Chat es posible gracias al software libre usado en nuestras {platform} y {mobile}.",
+    "share_extension.channel_error": "No eres miembro de un equipo en el servidor seleccionado. Selecciona otro servidor o abre Dumont Chat para unirte a un equipo.",
+    "mobile.login_options.gitlab": "Dumont Auth"
+}

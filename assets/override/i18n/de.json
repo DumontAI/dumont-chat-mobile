@@ -1,0 +1,20 @@
+{
+    "about.mattermost": "Dumont Chat",
+    "about.planNameLearn": "Erfahre mehr über Dumont Chat {planName} unter ",
+    "about.teamEditionLearn": "Schliesse Dich der Dumont Chat Community an auf ",
+    "extension.no_memberships.description": "Um Inhalte zu teilen, musst du Mitglied eines Teams auf einem Dumont Chat-Server sein.",
+    "extension.no_servers.description": "Um Inhalte zu teilen, musst du bei einem Dumont Chat-Server angemeldet sein.",
+    "invite_people_to_team.message": "Hier ist ein Link, um mit uns auf Dumont Chat zusammenzuarbeiten und zu kommunizieren.",
+    "mobile.calls.foreground_service.channel_name": "Dumont Chat Calls",
+    "mobile.calls.foreground_service.title": "Dumont Chat",
+    "mobile.calls_mic_error": "Um teilzunehmen, öffne die Einstellungen, um Dumont Chat Zugriff auf dein Mikrofon zu gewähren.",
+    "mobile.managed.not_secured.android": "Dieses Gerät muss mit einer Bildschirmsperre gesichert werden, um Dumont Chat verwenden zu können.",
+    "mobile.managed.not_secured.ios": "Dieses Gerät muss biometrisch oder mit einem Passcode gesichert werden, um Dumont Chat verwenden zu können.\n \nGehe zu Einstellungen > Face ID & Passwort.",
+    "mobile.server_upgrade.description": "\nEine Serveraktualisierung ist erforderlich, um die Dumont Chat-App zu verwenden. Bitte frage deinen Systemadministrator nach Details.\n",
+    "onboaring.welcome_description": "Dumont Chat ist eine Open-Source-Plattform für die Zusammenarbeit von Entwicklern. Sicher, flexibel und mit deinen Tools integriert.",
+    "rate.title": "Freude an Dumont Chat?",
+    "settings.about.powered_by": "{site} wird betrieben mit Dumont Chat",
+    "settings.notice_text": "Dumont Chat wird durch die in {platform} und {mobile} verwendete Open-Source-Software ermöglicht.",
+    "share_extension.channel_error": "Du bist kein Mitglied eines Teams auf dem ausgewählten Server. Wähle einen anderen Server oder öffne Dumont Chat, um einem Team beizutreten.",
+    "mobile.login_options.gitlab": "Dumont Auth"
+}

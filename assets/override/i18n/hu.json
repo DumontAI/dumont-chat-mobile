@@ -1,0 +1,11 @@
+{
+    "about.mattermost": "Dumont Chat",
+    "about.planNameLearn": "Tudj meg többet a Dumont Chatról itt: {planName} ",
+    "about.teamEditionLearn": "Csatlakozz a Dumont Chat közösséghez itt: ",
+    "extension.no_memberships.description": "Tartalmak megosztásához egy Dumont Chat kiszolgálón lévő csapat tagjának kell lennie.",
+    "extension.no_servers.description": "Tartalom megosztásához be kell jelentkeznie egy Dumont Chat kiszolgálóra.",
+    "mobile.managed.not_secured.android": "A Dumont Chat használatához a készüléket képernyőzárral kell beállítani.",
+    "mobile.managed.not_secured.ios": "A Dumont Chat használatához ezt az eszközt biometriával vagy jelkóddal kell védeni.\n\nLépjen a Beállítások > Face ID és jelkód menüpontba.",
+    "share_extension.channel_error": "A kiválasztott szerveren nem tagja egy csapatnak sem. Válasszon másik szervert vagy nyissa meg a Dumont Chatot és csatlakozzon egy csapathoz.",
+    "mobile.login_options.gitlab": "Dumont Auth"
+}

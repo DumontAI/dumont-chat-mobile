@@ -1,6 +1,7 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
+import {Image} from 'expo-image';
 import React, {useCallback, useMemo, useState} from 'react';
 import {useIntl} from 'react-intl';
 import {Text, useWindowDimensions, View, type LayoutChangeEvent} from 'react-native';
@@ -38,6 +39,8 @@ export interface LoginOptionsProps extends LaunchProps {
     theme: Theme;
 }
 
+const BRAND_MARK = require('@assets/images/dumont_mark.png');
+
 const getStyles = makeStyleSheetFromTheme((theme: Theme) => ({
     centered: {
         width: '100%',
@@ -49,6 +52,12 @@ const getStyles = makeStyleSheetFromTheme((theme: Theme) => ({
     },
     flex: {
         flex: 1,
+    },
+    brandMark: {
+        width: 56,
+        height: 56,
+        borderRadius: 13,
+        marginBottom: 20,
     },
     header: {
         color: theme.centerChannelColor,
@@ -208,6 +217,12 @@ const LoginOptions = ({
                         onLayout={onLayout}
                         style={styles.centered}
                     >
+                        <Image
+                            source={BRAND_MARK}
+                            style={styles.brandMark}
+                            contentFit='contain'
+                            accessibilityLabel='Dumont Chat'
+                        />
                         {title}
                         {description}
                         {hasLoginForm &&

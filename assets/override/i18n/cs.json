@@ -1,0 +1,18 @@
+{
+    "about.mattermost": "Dumont Chat",
+    "about.planNameLearn": "Více informací o platformě Dumont Chat najdete na {planName} ",
+    "about.teamEditionLearn": "Přidejte se ke komunitě Dumont Chat na ",
+    "extension.no_memberships.description": "K sdílení obsahu musíte být členem týmu na serveru Dumont Chat.",
+    "extension.no_servers.description": "K sdílení obsahu musíte být přihlášen na server Dumont Chat.",
+    "invite_people_to_team.message": "Zde je odkaz pro spolupráci a komunikaci s námi na Dumont Chatu.",
+    "mobile.calls_mic_error": "Pro účast otevřete Nastavení a udělte Dumont Chat přístup k vašemu mikrofonu.",
+    "mobile.managed.not_secured.android": "Toto zařízení musí být zabezpečeno uzamčením obrazovky, aby bylo možné používat Dumont Chat.",
+    "mobile.managed.not_secured.ios": "Toto zařízení musí být zabezpečeno pomocí biometrie nebo kódu pro použití Dumont Chat.\n\nPřejděte do Nastavení > Face ID a kód.",
+    "mobile.server_upgrade.description": "\nPro použití aplikace Dumont Chat je vyžadována aktualizace serveru. Prosím, požádejte svého správce systému o podrobnosti.\n",
+    "onboaring.welcome_description": "Dumont Chat je open source platforma pro spolupráci vývojářů. Bezpečná, flexibilní a integrovaná s vašimi nástroji.",
+    "rate.title": "Baví vás Dumont Chat?",
+    "settings.about.powered_by": "{site} používá Dumont Chat",
+    "settings.notice_text": "Dumont Chat je vytvořený díky softwaru s otevřeným zdrojovým kódem, který se používá na naší {platform} a {mobile}.",
+    "share_extension.channel_error": "Nejste členem týmu na zvoleném serveru. Zvolte jiný server nebo otevřete Dumont Chat pro připojení k týmu.",
+    "mobile.login_options.gitlab": "Dumont Auth"
+}

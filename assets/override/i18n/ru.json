@@ -1,0 +1,20 @@
+{
+    "about.mattermost": "Dumont Chat",
+    "about.planNameLearn": "Узнать больше о Dumont Chat {planName} можно на сайте ",
+    "about.teamEditionLearn": "Присоединяйтесь к сообществу Dumont Chat на ",
+    "extension.no_memberships.description": "Чтобы обмениваться контентом, вам необходимо быть участником команды на сервере Dumont Chat.",
+    "extension.no_servers.description": "Чтобы поделиться контентом, вам необходимо войти на сервер Dumont Chat.",
+    "invite_people_to_team.message": "Вот ссылка для сотрудничества и общения с нами в Dumont Chat.",
+    "mobile.calls.foreground_service.channel_name": "Звонки Dumont Chat",
+    "mobile.calls.foreground_service.title": "Dumont Chat",
+    "mobile.calls_mic_error": "Для участия откройте \"Настройки\", чтобы предоставить Dumont Chat доступ к вашему микрофону.",
+    "mobile.managed.not_secured.android": "Это устройство должно быть защищено с помощью блокировки экрана, чтобы использовать Dumont Chat.",
+    "mobile.managed.not_secured.ios": "Это устройство должно быть защищено биометрией или паролем, чтобы использовать Dumont Chat.\n\nПерейди в Настройки > Face ID & Passcode.",
+    "mobile.server_upgrade.description": "\nДля продолжения работы требуется обновление сервера Dumont Chat. Пожалуйста, обратитесь к системному администратору за подробностями.\n",
+    "onboaring.welcome_description": "Dumont Chat - это платформа с открытым исходным кодом для совместной работы разработчиков. Безопасная, гибкая и интегрированная с вашими инструментами.",
+    "rate.title": "Нравится Dumont Chat?",
+    "settings.about.powered_by": "{site} работает на Dumont Chat",
+    "settings.notice_text": "Dumont Chat стал возможен благодаря использованию программ с открытым исходным кодом в нашем {platform} и {mobile}.",
+    "share_extension.channel_error": "Вы не являетесь членом команды на выбранном сервере. Выберите другой сервер или откройте Dumont Chat, чтобы присоединиться к команде.",
+    "mobile.login_options.gitlab": "Dumont Auth"
+}

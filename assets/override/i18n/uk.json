@@ -1,0 +1,18 @@
+{
+    "about.mattermost": "Dumont Chat",
+    "about.planNameLearn": "Дізнайтеся більше про Dumont Chat {planName} за адресою ",
+    "about.teamEditionLearn": "Приєднуйтесь до спільноти Dumont Chat на ",
+    "extension.no_memberships.description": "Щоб ділитися контентом, вам потрібно бути членом команди на сервері Dumont Chat.",
+    "extension.no_servers.description": "Щоб ділитися контентом, вам потрібно увійти на сервер Dumont Chat.",
+    "invite_people_to_team.message": "Ось посилання для співпраці та спілкування з нами на Dumont Chat.",
+    "mobile.calls_mic_error": "Щоб взяти участь, відкрийте Налаштування, щоб надати Dumont Chat доступ до вашого мікрофона.",
+    "mobile.managed.not_secured.android": "Щоб використовувати Dumont Chat, цей пристрій має бути захищено блокуванням екрана.",
+    "mobile.managed.not_secured.ios": "Щоб використовувати Dumont Chat, цей пристрій має бути захищено біометричними даними або паролем.\n\nПерейдіть у Налаштування > Ідентифікатор обличчя та пароль.",
+    "mobile.server_upgrade.description": "\nДля використання програми Dumont Chat потрібне оновлення сервера. Будь ласка, зверніться до вашого системного адміністратора за деталями.\n",
+    "onboaring.welcome_description": "Dumont Chat - це платформа з відкритим вихідним кодом для співпраці розробників. Безпечна, гнучка та інтегрована з вашими інструментами.",
+    "rate.title": "Подобається Dumont Chat?",
+    "settings.about.powered_by": "{site} працює на платформі Dumont Chat",
+    "settings.notice_text": "Dumont Chat став можливим завдяки програмному забезпеченню з відкритим кодом, яке використовується на наших {platform} і {mobile}.",
+    "share_extension.channel_error": "Ви не є членом команди на вибраному сервері. Виберіть інший сервер або відкрийте Dumont Chat, щоб приєднатися до команди.",
+    "mobile.login_options.gitlab": "Dumont Auth"
+}
