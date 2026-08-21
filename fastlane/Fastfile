@@ -525,10 +525,14 @@ platform :ios do
         new_string: app_bundle_id
     )
 
-    update_icloud_container_identifiers(
-        entitlements_file: './ios/Mattermost/Mattermost.entitlements',
-        icloud_container_identifiers: [icloud_container]
-    )
+    # iCloud Documents is not used by Dumont Chat and the entitlement was
+    # removed, so only touch it when a container is actually configured.
+    unless ENV['IOS_ICLOUD_CONTAINER'].to_s.empty?
+      update_icloud_container_identifiers(
+          entitlements_file: './ios/Mattermost/Mattermost.entitlements',
+          icloud_container_identifiers: [icloud_container]
+      )
+    end
 
     update_app_group_identifiers(
         entitlements_file: './ios/Mattermost/Mattermost.entitlements',
@@ -746,7 +750,7 @@ platform :ios do
       target = 'Mattermost'
       if id.include? 'NotificationService'
         target = 'NotificationService'
-      elsif id.include? 'MattermostShare'
+      elsif id.include?('MattermostShare') || id.end_with?('.Share')
         target = 'MattermostShare'
       end
 
@@ -761,6 +765,23 @@ platform :ios do
           code_signing_identity: 'iPhone Distribution' # optionally specify the codesigning identity
       )
     end
+  end
+
+  # exportArchive cannot pick a profile on its own under manual signing, so map
+  # each bundle id to the profile name read out of the file match/sigh recorded.
+  def export_options_for_manual_signing
+    profiles = {}
+    (ENV['MATCH_APP_IDENTIFIER'] || '').split(',').map(&:strip).each do |id|
+      path = ENV["sigh_#{id}_#{ENV['MATCH_TYPE']}_profile-path"]
+      next if path.nil? || path.empty? || !File.exist?(path)
+      name = `/usr/bin/security cms -D -i "#{path}" | /usr/bin/plutil -extract Name raw -o - -`.strip
+      profiles[id] = name unless name.empty?
+    end
+    opts = {signingStyle: 'manual'}
+    opts[:provisioningProfiles] = profiles unless profiles.empty?
+    opts[:iCloudContainerEnvironment] = 'Production' unless ENV['IOS_ICLOUD_CONTAINER'].to_s.empty?
+    UI.message("export profiles: #{profiles}")
+    opts
   end
 
   def build_ios
@@ -783,10 +804,7 @@ platform :ios do
         skip_profile_detection: true,
         output_name: "#{app_name_sub}.ipa",
         export_xcargs: "-allowProvisioningUpdates",
-        export_options: {
-            signingStyle: 'manual',
-            iCloudContainerEnvironment: 'Production'
-        },
+        export_options: export_options_for_manual_signing,
         xcargs: xcargs
     )
   end
