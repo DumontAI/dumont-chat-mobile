@@ -2105,7 +2105,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = chat.dumont.app;
 				PRODUCT_NAME = Mattermost;
-				PROVISIONING_PROFILE = "62e17dea-5967-462e-be44-df82e2f146cf";
+				PROVISIONING_PROFILE = "a9d763af-7a29-4836-ab24-1452b27f61d6";
 				PROVISIONING_PROFILE_SPECIFIER = "Dumont Chat AppStore chat.dumont.app";
 				SWIFT_OBJC_BRIDGING_HEADER = "Mattermost/Mattermost-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -2205,7 +2205,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = chat.dumont.app.NotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a4c2a27b-5555-431c-8237-44bf392a0b1c";
+				PROVISIONING_PROFILE = "dfdd33d9-5f77-42c8-b913-d840d9884385";
 				PROVISIONING_PROFILE_SPECIFIER = "Dumont Chat AppStore chat.dumont.app.NotificationService";
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -2310,7 +2310,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = chat.dumont.app.Share;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "660aa415-906e-406c-8537-255f705d9b1e";
+				PROVISIONING_PROFILE = "8ada1882-a18f-45dd-a3a5-3a77a2ab2104";
 				PROVISIONING_PROFILE_SPECIFIER = "Dumont Chat AppStore chat.dumont.app.Share";
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;

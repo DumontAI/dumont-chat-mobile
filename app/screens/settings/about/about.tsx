@@ -97,9 +97,6 @@ const getStyleSheet = makeStyleSheetFromTheme((theme) => {
             ...typography('Body', 50),
             marginBottom: 10,
         },
-        copyrightText: {
-            marginBottom: 0,
-        },
         tosPrivacyContainer: {
             flexDirection: 'row',
             marginBottom: 10,
@@ -299,13 +296,6 @@ const About = ({config, license}: AboutProps) => {
                     />
                     <View
                         style={styles.thinLine}
-                    />
-                    <FormattedText
-                        defaultMessage='Copyright 2015-{currentYear} Mattermost, Inc. All rights reserved'
-                        id={'settings.about.copyright'}
-                        style={[styles.footerText, styles.copyrightText]}
-                        testID='about.copyright'
-                        values={{currentYear: new Date().getFullYear()}}
                     />
                     <View style={styles.tosPrivacyContainer}>
                         <TosPrivacyContainer
