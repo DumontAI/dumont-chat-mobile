@@ -3,7 +3,7 @@
 "about.enterpriseEditionSt" = "Modernus bendravimas iš už Jūsų ugniasienės.";
 "about.hash" = "Sukūrimo maišos kodas:";
 "about.hashee" = "EE sukūrimo maišos kodas:";
-"about.teamEditionLearn" = "Prisijunkite prie Mattermost bendruomenės";
+"about.teamEditionLearn" = "Prisijunkite prie Dumont Chat bendruomenės";
 "about.teamEditionSt" = "Visos Jūsų komandos bendravimas vienoje vietoje, kurioje galima akimirksniu atlikti paiešką ir pasiekti viską iš bet kur.";
 "about.teamEditiont0" = "Team laida";
 "about.teamEditiont1" = "Enterprise laida";
@@ -235,10 +235,10 @@
 "mobile.account.settings.save" = "Išsaugoti";
 "mobile.action_menu.select" = "Pasirinkite parinktį";
 "mobile.android.back_handler_exit" = "Dar kartą paspauskite atgal, kad išeitumėte";
-"mobile.android.photos_permission_denied_description" = "Įkelkite nuotraukas į Mattermost arba išsaugokite jas savo prietaise. Atidarykite nustatymus, kad suteiktumėte Dumont Chat skaitymo ir rašymo prieigą prie savo nuotraukų bibliotekos.";
+"mobile.android.photos_permission_denied_description" = "Įkelkite nuotraukas į Dumont Chat arba išsaugokite jas savo prietaise. Atidarykite nustatymus, kad suteiktumėte Dumont Chat skaitymo ir rašymo prieigą prie savo nuotraukų bibliotekos.";
 "mobile.android.photos_permission_denied_title" = "Dumont Chat norėtų pasiekti Jūsų nuotraukas";
 "mobile.announcement_banner.title" = "Skelbimas";
-"mobile.camera_photo_permission_denied_description" = "Darykite nuotraukas ir įkelkite jas į savo Mattermost arba išsaugokite jas savo prietaise. Atidarykite nustatymus, kad suteiktumėte Dumont Chat skaitymo ir rašymo prieigą prie fotoaparato.";
+"mobile.camera_photo_permission_denied_description" = "Darykite nuotraukas ir įkelkite jas į savo Dumont Chat arba išsaugokite jas savo prietaise. Atidarykite nustatymus, kad suteiktumėte Dumont Chat skaitymo ir rašymo prieigą prie fotoaparato.";
 "mobile.camera_photo_permission_denied_title" = "Dumont Chat norėtų gauti prieigą prie Jūsų fotoaparato";
 "mobile.channel_info.alertNo" = "Ne";
 "mobile.channel_info.alertYes" = "Taip";
@@ -292,8 +292,8 @@ Priežastis: {reason}
 Derinimo informacija: {debug}
 
 Uždarykite programą.";
-"mobile.managed.not_secured.android" = "Kad galėtumėte naudoti Mattermost, šis įrenginys turi būti apsaugotas ekrano užraktu.";
-"mobile.managed.not_secured.ios" = "Šis įrenginys turi būti apsaugotas slaptažodžiu, kad galėtumėte naudoti Mattermost.
+"mobile.managed.not_secured.android" = "Kad galėtumėte naudoti Dumont Chat, šis įrenginys turi būti apsaugotas ekrano užraktu.";
+"mobile.managed.not_secured.ios" = "Šis įrenginys turi būti apsaugotas slaptažodžiu, kad galėtumėte naudoti Dumont Chat.
 
 Eikite į Nustatymai > Veido ID ir slaptažodis.";
 "mobile.managed.secured_by" = "Apsaugotas {vendor}";

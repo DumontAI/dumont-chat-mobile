@@ -3,9 +3,9 @@
 "about.enterpriseEditionSt" = "Moderne Kommunikation hinter Deiner Firewall.";
 "about.hash" = "Build Hashwert:";
 "about.hashee" = "EE Build Hashwert:";
-"about.mattermost" = "Mattermost";
-"about.planNameLearn" = "Erfahre mehr über Mattermost {planName} unter ";
-"about.teamEditionLearn" = "Schliesse Dich der Mattermost Community an auf ";
+"about.mattermost" = "Dumont Chat";
+"about.planNameLearn" = "Erfahre mehr über Dumont Chat {planName} unter ";
+"about.teamEditionLearn" = "Schliesse Dich der Dumont Chat Community an auf ";
 "about.teamEditionSt" = "Deine gesamte Team-Kommunikation an einem Ort, sofort durchsuchbar und überall verfügbar.";
 "about.teamEditiont0" = "Team Edition";
 "about.teamEditiont1" = "Enterprise Edition";
@@ -491,9 +491,9 @@ Bist du sicher, dass du **{displayName}**** in einen privaten Kanal umwandeln m�
 "emoji_skin.medium_dark_skin_tone" = "Mitteldunkler Hautton";
 "emoji_skin.medium_light_skin_tone" = "Mittelheller Hautton";
 "emoji_skin.medium_skin_tone" = "Mittlerer Hautton";
-"extension.no_memberships.description" = "Um Inhalte zu teilen, musst du Mitglied eines Teams auf einem Mattermost-Server sein.";
+"extension.no_memberships.description" = "Um Inhalte zu teilen, musst du Mitglied eines Teams auf einem Dumont Chat-Server sein.";
 "extension.no_memberships.title" = "Noch kein Mitglied in einem Team";
-"extension.no_servers.description" = "Um Inhalte zu teilen, musst du bei einem Mattermost-Server angemeldet sein.";
+"extension.no_servers.description" = "Um Inhalte zu teilen, musst du bei einem Dumont Chat-Server angemeldet sein.";
 "extension.no_servers.title" = "Keine Verbindung zu einem Server";
 "extension.zero_persistence_servers.description" = "Teilen ist nicht verfügbar, weil dieser Server im Zero-Persistence-Modus konfiguriert ist.";
 "extension.zero_persistence_servers.title" = "Teilen nicht verfügbar";
@@ -606,7 +606,7 @@ Bist du sicher, dass du **{displayName}**** in einen privaten Kanal umwandeln m�
 "invite.summary.try_again" = "Nochmal versuchen";
 "invite.title" = "Einladen";
 "invite.title.summary" = "Zusammenfassung Einladungen";
-"invite_people_to_team.message" = "Hier ist ein Link, um mit uns auf Mattermost zusammenzuarbeiten und zu kommunizieren.";
+"invite_people_to_team.message" = "Hier ist ein Link, um mit uns auf Dumont Chat zusammenzuarbeiten und zu kommunizieren.";
 "invite_people_to_team.title" = "Werde Mitglied des {team} Teams";
 "join_team.error.group_error" = "Du musst Mitglied einer verknüpften Gruppe sein, um diesem Team beitreten zu können.";
 "join_team.error.message" = "Es ist ein Fehler beim Beitritt zum Team aufgetreten";
@@ -677,9 +677,9 @@ Bist du sicher, dass du **{displayName}**** in einen privaten Kanal umwandeln m�
 "mobile.burn_on_read.read_receipt.text" = "Gelesen von {readReceipts} von {totalReceipts} Empfängern";
 "mobile.burn_on_read.read_receipt.title" = "Löschen-nach-Lesen Nachricht";
 "mobile.calls.foreground_service.channel_description" = "Hält das Mikrofon während eines laufenden Gesprächs aktiv";
-"mobile.calls.foreground_service.channel_name" = "Mattermost Calls";
+"mobile.calls.foreground_service.channel_name" = "Dumont Chat Calls";
 "mobile.calls.foreground_service.text" = "Anruf läuft";
-"mobile.calls.foreground_service.title" = "Mattermost";
+"mobile.calls.foreground_service.title" = "Dumont Chat";
 "mobile.calls_bluetooth" = "Bluetooth";
 "mobile.calls_call_ended" = "Anruf beendet";
 "mobile.calls_call_screen" = "Anruf";
@@ -732,7 +732,7 @@ Bist du sicher, dass du **{displayName}**** in einen privaten Kanal umwandeln m�
 "mobile.calls_limit_reached" = "Teilnehmerlimit erreicht";
 "mobile.calls_lower_hand" = "Hand senken";
 "mobile.calls_make_host" = "Zum Gastgeber machen";
-"mobile.calls_mic_error" = "Um teilzunehmen, öffne die Einstellungen, um Mattermost Zugriff auf dein Mikrofon zu gewähren.";
+"mobile.calls_mic_error" = "Um teilzunehmen, öffne die Einstellungen, um Dumont Chat Zugriff auf dein Mikrofon zu gewähren.";
 "mobile.calls_more" = "Mehr";
 "mobile.calls_mute" = "Stumm";
 "mobile.calls_mute_others" = "Andere stummschalten";
@@ -892,7 +892,7 @@ Tippe auf Neustarten um die App neu zu öffnen. Nach dem Neustart kannst Du das 
 "mobile.login_options.cant_heading" = "Kann mich nicht anmelden";
 "mobile.login_options.enter_credentials" = "Gib unten deine Anmeldedaten ein.";
 "mobile.login_options.entraid" = "Entra ID";
-"mobile.login_options.gitlab" = "GitLab";
+"mobile.login_options.gitlab" = "Dumont Auth";
 "mobile.login_options.google" = "Google";
 "mobile.login_options.heading" = "Bei deinem Konto anmelden";
 "mobile.login_options.none" = "Du kannst dich noch nicht bei deinem Konto anmelden. Es muss mindestens eine Anmeldeoption konfiguriert sein. Kontaktieren deinen Systemadministrator für Hilfe.";
@@ -922,9 +922,9 @@ Tippe auf Neustarten um die App neu zu öffnen. Nach dem Neustart kannst Du das 
 
 Die App wird beendet.";
 "mobile.managed.logout" = "Abmelden";
-"mobile.managed.not_secured.android" = "Dieses Gerät muss mit einer Bildschirmsperre gesichert werden, um Mattermost verwenden zu können.";
+"mobile.managed.not_secured.android" = "Dieses Gerät muss mit einer Bildschirmsperre gesichert werden, um Dumont Chat verwenden zu können.";
 "mobile.managed.not_secured.android.vendor" = "Dieses Gerät muss mit einer Bildschirmsperre gesichert werden, um {vendor} zu verwenden.";
-"mobile.managed.not_secured.ios" = "Dieses Gerät muss biometrisch oder mit einem Passcode gesichert werden, um Mattermost verwenden zu können.
+"mobile.managed.not_secured.ios" = "Dieses Gerät muss biometrisch oder mit einem Passcode gesichert werden, um Dumont Chat verwenden zu können.
  
 Gehe zu Einstellungen > Face ID & Passwort.";
 "mobile.managed.not_secured.ios.vendor" = "Dieses Gerät muss mit biometrischen Daten oder einem Passcode gesichert werden, um {vendor} zu verwenden.
@@ -1050,7 +1050,7 @@ Gehe zu Einstellungen > Face ID & Passcode.";
 "mobile.server_requires_client_certificate" = "Server erfordert ein Client-Zertifikat zur Authentifizierung.";
 "mobile.server_upgrade.button" = "OK";
 "mobile.server_upgrade.description" = "
-Eine Serveraktualisierung ist erforderlich, um die Mattermost-App zu verwenden. Bitte frage deinen Systemadministrator nach Details.
+Eine Serveraktualisierung ist erforderlich, um die Dumont Chat-App zu verwenden. Bitte frage deinen Systemadministrator nach Details.
 ";
 "mobile.server_upgrade.title" = "Serveraktualisierung erforderlich";
 "mobile.server_url.deeplink.emm.denied" = "Diese Anwendung wird von einem EMM gesteuert und die DeepLink-Server-URL stimmt nicht mit dem vom EMM zugelassenen Server überein";
@@ -1154,7 +1154,7 @@ Eine Serveraktualisierung ist erforderlich, um die Mattermost-App zu verwenden. 
 "onboarding.realtime_collaboration" = "Zusammenarbeit in Echtzeit";
 "onboarding.realtime_collaboration_description" = "Persistente Kanäle, Direktnachrichten und Dateifreigabe funktionieren nahtlos, sodass du immer in Verbindung bleiben kannst, egal wo du bist.";
 "onboarding.welcome" = "Willkommen";
-"onboaring.welcome_description" = "Mattermost ist eine Open-Source-Plattform für die Zusammenarbeit von Entwicklern. Sicher, flexibel und mit deinen Tools integriert.";
+"onboaring.welcome_description" = "Dumont Chat ist eine Open-Source-Plattform für die Zusammenarbeit von Entwicklern. Sicher, flexibel und mit deinen Tools integriert.";
 "password_send.description" = "Um dein Passwort zurückzusetzen, gib die E-Mail-Adresse an, die du zur Registrierung verwendest hast";
 "password_send.error" = "Bitte gib eine gültige E-Mail-Adresse ein.";
 "password_send.generic_error" = "Wir konnten dir keinen Link zum Zurücksetzen des Passworts senden. Bitte kontaktiere deinen Systemadministrator für Hilfe.";
@@ -1394,7 +1394,7 @@ Eine Serveraktualisierung ist erforderlich, um die Mattermost-App zu verwenden. 
 "rate.error.text" = "Es ist ein Fehler beim Öffnen des Überprüfungsmodals aufgetreten.";
 "rate.error.title" = "Fehler";
 "rate.subtitle" = "Lassen Sie uns wissen, was du denkst.";
-"rate.title" = "Freude an Mattermost?";
+"rate.title" = "Freude an Dumont Chat?";
 "report_a_problem.metadata.appPlatform" = "App-Plattform";
 "report_a_problem.metadata.appVersion" = "App-Version";
 "report_a_problem.metadata.copy" = "Kopieren";
@@ -1555,7 +1555,7 @@ Möglicherweise stellen Sie eine Verbindung zu einem Server her, der vorgibt, \"
 "settings.about.license.load_metric" = "Load Metrik: {load}";
 "settings.about.license.load_metric.title" = "Load Metrik:";
 "settings.about.licensed" = "Lizenziert für: {company}";
-"settings.about.powered_by" = "{site} wird betrieben mit Mattermost";
+"settings.about.powered_by" = "{site} wird betrieben mit Dumont Chat";
 "settings.about.server.version" = "Server Version: {version} (Build {buildNumber}";
 "settings.about.server.version.noBuild" = "Server Version: {version}";
 "settings.about.server.version.title" = "Server-Version:";
@@ -1572,7 +1572,7 @@ Dadurch werden alle über die App heruntergeladenen Dateien für diesen Server g
 "settings.display" = "Anzeige";
 "settings.notice_mobile_link" = "mobile Apps";
 "settings.notice_platform_link" = "Server";
-"settings.notice_text" = "Mattermost wird durch die in {platform} und {mobile} verwendete Open-Source-Software ermöglicht.";
+"settings.notice_text" = "Dumont Chat wird durch die in {platform} und {mobile} verwendete Open-Source-Software ermöglicht.";
 "settings.notifications" = "Benachrichtigungen";
 "settings.save" = "Speichern";
 "settings_display.clock.mz" = "24-Stunden-Uhr";
@@ -1586,7 +1586,7 @@ Dadurch werden alle über die App heruntergeladenen Dateien für diesen Server g
 "settings_display.timezone.manual" = "Zeitzone ändern";
 "settings_display.timezone.off" = "Aus";
 "settings_display.timezone.select" = "Zeitzone auswählen";
-"share_extension.channel_error" = "Du bist kein Mitglied eines Teams auf dem ausgewählten Server. Wähle einen anderen Server oder öffne Mattermost, um einem Team beizutreten.";
+"share_extension.channel_error" = "Du bist kein Mitglied eines Teams auf dem ausgewählten Server. Wähle einen anderen Server oder öffne Dumont Chat, um einem Team beizutreten.";
 "share_extension.channel_label" = "Kanal";
 "share_extension.channels_screen.title" = "Kanal auswählen";
 "share_extension.count_limit" = "Du kannst nur {count, number} {count, plural, one {Datei} other {Dateien}} auf diesem Server freigeben";

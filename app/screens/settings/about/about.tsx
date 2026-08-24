@@ -2,7 +2,8 @@
 // See LICENSE.txt for license information.
 
 import Clipboard from '@react-native-clipboard/clipboard';
-import {applicationId, nativeApplicationVersion, nativeBuildVersion} from 'expo-application';
+import {nativeApplicationVersion, nativeBuildVersion} from 'expo-application';
+import {Image} from 'expo-image';
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import {useIntl} from 'react-intl';
 import {Text, View} from 'react-native';
@@ -10,7 +11,6 @@ import {Text, View} from 'react-native';
 import {getLicenseLoadMetric} from '@actions/remote/license';
 import Config from '@assets/config.json';
 import Button from '@components/button';
-import CompassIcon from '@components/compass_icon';
 import FormattedText from '@components/formatted_text';
 import SettingContainer from '@components/settings/container';
 import {Screens} from '@constants';
@@ -33,12 +33,16 @@ import Subtitle from './subtitle';
 import Title from './title';
 import TosPrivacyContainer from './tos_privacy';
 
-const MATTERMOST_BUNDLE_IDS = ['com.mattermost.rnbeta', 'com.mattermost.rn'];
-
 const TABLET_EXTRA_PADDING = 20;
+
+const BRAND_MARK = require('@assets/images/dumont_mark.png');
 
 const getStyleSheet = makeStyleSheetFromTheme((theme) => {
     return {
+        brandMark: {
+            width: 80,
+            height: 80,
+        },
         logoContainer: {
             alignItems: 'center',
             marginTop: 20,
@@ -190,9 +194,7 @@ const About = ({config, license}: AboutProps) => {
             const buildNumber = config.BuildNumber;
             const version = config.Version;
             const server = buildNumber === version ? intl.formatMessage({id: 'settings.about.server.version.noBuild', defaultMessage: 'Server Version: {version}'}, {version}) : intl.formatMessage({id: 'settings.about.server.version', defaultMessage: 'Server Version: {version} (Build {buildNumber})'}, {version, buildNumber});
-            const database = intl.formatMessage({id: 'settings.about.database', defaultMessage: 'Database: {driverName}'}, {driverName: config.SQLDriverName});
-            const databaseSchemaVersion = intl.formatMessage({id: 'settings.about.database.schema', defaultMessage: 'Database Schema Version: {version}'}, {version: config.SchemaVersion});
-            let copiedString = `${appVersion}\n${server}\n${database}\n${databaseSchemaVersion}`;
+            let copiedString = `${appVersion}\n${server}`;
 
             if (loadMetric !== null) {
                 const loadMetricStr = intl.formatMessage({id: 'settings.about.license.load_metric', defaultMessage: 'Load Metric: {load}'}, {load: loadMetric});
@@ -202,23 +204,20 @@ const About = ({config, license}: AboutProps) => {
             Clipboard.setString(copiedString);
             showSnackBar({barType: SNACK_BAR_TYPE.INFO_COPIED, sourceScreen: Screens.ABOUT});
         },
-        [intl, config.BuildNumber, config.Version, config.SQLDriverName, config.SchemaVersion, loadMetric],
+        [intl, config.BuildNumber, config.Version, loadMetric],
     );
 
     return (
         <SettingContainer testID='about'>
             <View style={isTablet ? styles.tabletContentWrapper : undefined}>
                 <View style={styles.logoContainer}>
-                    <CompassIcon
-                        color={theme.centerChannelColor}
-                        name='mattermost'
-                        size={80}
+                    <Image
+                        source={BRAND_MARK}
+                        style={styles.brandMark}
+                        contentFit='contain'
                         testID='about.logo'
                     />
-                    <Title
-                        config={config}
-                        license={license}
-                    />
+                    <Title/>
                     <Subtitle config={config}/>
                     <View
                         style={styles.thinLine}
@@ -271,34 +270,6 @@ const About = ({config, license}: AboutProps) => {
                             </Text>
                         </View>
                     )}
-                    <View style={styles.group}>
-                        <Text
-                            style={styles.leftHeading}
-                            testID='about.database.title'
-                        >
-                            {intl.formatMessage({id: 'settings.about.database.title', defaultMessage: 'Database:'})}
-                        </Text>
-                        <Text
-                            style={styles.rightHeading}
-                            testID='about.database.value'
-                        >
-                            {config.SQLDriverName}
-                        </Text>
-                    </View>
-                    <View style={styles.group}>
-                        <Text
-                            style={styles.leftHeading}
-                            testID='about.database_schema_version.title'
-                        >
-                            {intl.formatMessage({id: 'settings.about.database.schema.title', defaultMessage: 'Database Schema Version:'})}
-                        </Text>
-                        <Text
-                            style={styles.rightHeading}
-                            testID='about.database_schema_version.value'
-                        >
-                            {config.SchemaVersion}
-                        </Text>
-                    </View>
                     <View style={styles.copyInfoButtonContainer}>
                         <Button
                             theme={theme}
@@ -326,15 +297,6 @@ const About = ({config, license}: AboutProps) => {
                         license={license}
                         onPress={handleAboutTeam}
                     />
-                    {!MATTERMOST_BUNDLE_IDS.includes(applicationId || '') &&
-                    <FormattedText
-                        defaultMessage='{site} is powered by Mattermost'
-                        id={'settings.about.powered_by'}
-                        style={styles.footerText}
-                        testID='about.powered_by'
-                        values={{site: config.SiteName}}
-                    />
-                    }
                     <View
                         style={styles.thinLine}
                     />

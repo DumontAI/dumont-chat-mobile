@@ -31,11 +31,12 @@ const DISMISS_POSITION = -130;
 
 const styles = StyleSheet.create({
     container: {
+        alignItems: 'center',
         alignSelf: 'center',
         backgroundColor: changeOpacity('#000', 0.88),
         borderRadius: 12,
         flexDirection: 'row',
-        padding: 10,
+        padding: 12,
         width: '95%',
     },
     tablet: {
@@ -52,12 +53,15 @@ const styles = StyleSheet.create({
     titleContainer: {
         flex: 1,
         flexDirection: 'column',
-        alignSelf: 'stretch',
+
+        // A fixed 60pt floor left a band of dead space under a one-line
+        // message; let the banner hug its content instead.
+        justifyContent: 'center',
         alignItems: 'flex-start',
         marginLeft: 10,
-        minHeight: 60,
     },
     touchable: {
+        alignItems: 'center',
         flexDirection: 'row',
     },
     gestureHandler: {

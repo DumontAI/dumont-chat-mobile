@@ -37,6 +37,7 @@ type Props = {
     canJoinOtherTeams: boolean;
     currentTeamId: string;
     displayName?: string;
+    teamsCount?: number;
     hasMoreThanOneTeam: boolean;
     iconPad?: boolean;
     pushProxyStatus: string;
@@ -121,6 +122,7 @@ const ChannelListHeader = ({
     hasMoreThanOneTeam,
     iconPad,
     pushProxyStatus,
+    teamsCount = 0,
 }: Props) => {
     const theme = useTheme();
     const intl = useIntl();
@@ -168,7 +170,8 @@ const ChannelListHeader = ({
     }, [canCreateChannels, canInvitePeople, canJoinChannels]));
 
     const onTeamPress = usePreventDoubleTap(useCallback(() => {
-        const rowCount = (canJoinOtherTeams ? 1 : 0) + (hasMoreThanOneTeam ? 1 : 0);
+        // The menu now lists every team, so the sheet has to be tall enough.
+        const rowCount = teamsCount + (canJoinOtherTeams ? 1 : 0) + (hasMoreThanOneTeam ? 1 : 0);
 
         const renderContent = () => (
             <TeamMenu
@@ -183,7 +186,7 @@ const ChannelListHeader = ({
             renderContent,
             [1, bottomSheetSnapPoint(rowCount, ITEM_HEIGHT)],
         );
-    }, [canJoinOtherTeams, hasMoreThanOneTeam, currentTeamId, displayName]));
+    }, [canJoinOtherTeams, hasMoreThanOneTeam, currentTeamId, displayName, teamsCount]));
 
     const onPushAlertPress = useCallback(() => {
         if (pushProxyStatus === PUSH_PROXY_STATUS_NOT_AVAILABLE) {
@@ -233,14 +236,9 @@ const ChannelListHeader = ({
                         </Pressable>
                     </View>
                     <View style={styles.subHeadingView}>
-                        <Text
-                            numberOfLines={1}
-                            ellipsizeMode='tail'
-                            style={styles.subHeadingStyles}
-                            testID='channel_list_header.server_display_name'
-                        >
-                            {serverDisplayName}
-                        </Text>
+                        {/* The server name sat under the team name and only ever
+                            showed the URL. The row stays for the push alert and
+                            the unread spinner. */}
                         {pushProxyStatus !== PUSH_PROXY_STATUS_VERIFIED && (
                             <TouchableWithFeedback
                                 onPress={onPushAlertPress}

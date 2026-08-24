@@ -1,6 +1,6 @@
 NSAppleMusicUsageDescription = "Autoriser l'accès à votre bibliothèque de medias signifie que vous pouvez joindre des fichiers de votre bibliothèque aux messages de Dumont Chat.";
-NSBluetoothAlwaysUsageDescription = "Autoriser l'accès Blutooth signifie que vous pouvez synchroniser du contenu entre les appareils et clients Mattermost.";
-NSBluetoothPeripheralUsageDescription = "Autoriser l'accès Bluetooth signifie que vous pouvez connecter des périphériques audio pour vos appels, et synchroniser du contenu entre les appareils et clients Mattermost.";
+NSBluetoothAlwaysUsageDescription = "Autoriser l'accès Blutooth signifie que vous pouvez synchroniser du contenu entre les appareils et clients Dumont Chat.";
+NSBluetoothPeripheralUsageDescription = "Autoriser l'accès Bluetooth signifie que vous pouvez connecter des périphériques audio pour vos appels, et synchroniser du contenu entre les appareils et clients Dumont Chat.";
 NSCameraUsageDescription = "Autoriser l'accès à votre caméra vous permet de prendre des photos et des vidéos et de les joindre aux messages.";
 NSFaceIDUsageDescription = "Autoriser l'accès à Face ID signifie que vous pouvez restreindre l'accès à Dumont Chat aux utilisateurs non autorisés, sur votre appareil.";
 NSLocationAlwaysUsageDescription = "Autoriser l'accès à vos données de localisation signifie que vous pouvez ajouter des metadonnées de localisations aux photos et vidéos que vous partagez dans Dumont Chat.";

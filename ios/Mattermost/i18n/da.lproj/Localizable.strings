@@ -3,9 +3,9 @@
 "about.enterpriseEditionSt" = "Moderne kommunikation bag din firewall.";
 "about.hash" = "Build Hash:";
 "about.hashee" = "EE Build Hash:";
-"about.mattermost" = "Mattermost";
-"about.planNameLearn" = "Lær mere om Mattermost {planName} på ";
-"about.teamEditionLearn" = "Bliv medlem i Mattermost kliken på ";
+"about.mattermost" = "Dumont Chat";
+"about.planNameLearn" = "Lær mere om Dumont Chat {planName} på ";
+"about.teamEditionLearn" = "Bliv medlem i Dumont Chat kliken på ";
 "about.teamEditionSt" = "Al kommunikation i dit team på ét sted, søgbart og tilgængeligt overalt.";
 "about.teamEditiont0" = "Team Udgave";
 "about.teamEditiont1" = "Virksomhedsudgave";
@@ -484,9 +484,9 @@ Er du sikker på, at du vil konvertere {displayName} til en privat kanal?";
 "emoji_skin.medium_dark_skin_tone" = "medium mørk hudfarve";
 "emoji_skin.medium_light_skin_tone" = "medium lys hudfarve";
 "emoji_skin.medium_skin_tone" = "medium hudfarve";
-"extension.no_memberships.description" = "For at dele indhold skal du være medlem af et team på en Mattermost-server.";
+"extension.no_memberships.description" = "For at dele indhold skal du være medlem af et team på en Dumont Chat-server.";
 "extension.no_memberships.title" = "Ikke medlem af noget team endnu";
-"extension.no_servers.description" = "For at dele indhold skal du være logget ind på en Mattermost-server.";
+"extension.no_servers.description" = "For at dele indhold skal du være logget ind på en Dumont Chat-server.";
 "extension.no_servers.title" = "Ikke forbundet til nogen servere";
 "file_upload.fileAbove" = "Filer skal være mindre end {max}";
 "find_channels.directory" = "Mappe";
@@ -596,7 +596,7 @@ Er du sikker på, at du vil konvertere {displayName} til en privat kanal?";
 "invite.summary.try_again" = "Prøv igen";
 "invite.title" = "Inviter";
 "invite.title.summary" = "Invitationsoversigt";
-"invite_people_to_team.message" = "Her er et link til at samarbejde og kommunikere med os på Mattermost.";
+"invite_people_to_team.message" = "Her er et link til at samarbejde og kommunikere med os på Dumont Chat.";
 "invite_people_to_team.title" = "Tilmeld dig {team}-teamet";
 "join_team.error.group_error" = "Du skal være medlem af en tilknyttet gruppe for at deltage i dette team.";
 "join_team.error.message" = "Der opstod en fejl ved tilmelding til teamet";
@@ -666,9 +666,9 @@ Er du sikker på, at du vil konvertere {displayName} til en privat kanal?";
 "mobile.burn_on_read.read_receipt.text" = "Læst af {readReceipts} ud af {totalReceipts} modtagere";
 "mobile.burn_on_read.read_receipt.title" = "Besked der slettes ved læsning";
 "mobile.calls.foreground_service.channel_description" = "Holder mikrofonen aktiv, mens et opkald er i gang";
-"mobile.calls.foreground_service.channel_name" = "Mattermost Calls";
+"mobile.calls.foreground_service.channel_name" = "Dumont Chat Calls";
 "mobile.calls.foreground_service.text" = "Opkald i gang";
-"mobile.calls.foreground_service.title" = "Mattermost";
+"mobile.calls.foreground_service.title" = "Dumont Chat";
 "mobile.calls_bluetooth" = "Bluetooth";
 "mobile.calls_call_ended" = "Opkald afsluttet";
 "mobile.calls_call_screen" = "Opkald";
@@ -721,7 +721,7 @@ Er du sikker på, at du vil konvertere {displayName} til en privat kanal?";
 "mobile.calls_limit_reached" = "Deltagergrænse nået";
 "mobile.calls_lower_hand" = "Sænk hånd";
 "mobile.calls_make_host" = "Gør til vært";
-"mobile.calls_mic_error" = "For at deltage skal du åbne Indstillinger for at give Mattermost adgang til din mikrofon.";
+"mobile.calls_mic_error" = "For at deltage skal du åbne Indstillinger for at give Dumont Chat adgang til din mikrofon.";
 "mobile.calls_more" = "Mere";
 "mobile.calls_mute" = "Slå lyden fra";
 "mobile.calls_mute_others" = "Slå lyden fra for andre";
@@ -881,7 +881,7 @@ Tryk på genstart for at åbne appen igen. Efter genstart kan du rapportere prob
 "mobile.login_options.cant_heading" = "Kan ikke logge ind";
 "mobile.login_options.enter_credentials" = "Indtast dine loginoplysninger nedenfor.";
 "mobile.login_options.entraid" = "Entra ID";
-"mobile.login_options.gitlab" = "GitLab";
+"mobile.login_options.gitlab" = "Dumont Auth";
 "mobile.login_options.google" = "Google";
 "mobile.login_options.heading" = "Log ind på din konto";
 "mobile.login_options.none" = "Du kan ikke logge ind på din konto endnu. Mindst én loginmulighed skal være konfigureret. Kontakt din systemadministrator for hjælp.";
@@ -911,9 +911,9 @@ Tryk på genstart for at åbne appen igen. Efter genstart kan du rapportere prob
 
 Appen lukkes nu.";
 "mobile.managed.logout" = "Log ud";
-"mobile.managed.not_secured.android" = "Denne enhed skal sikres med en skærmlås for at bruge Mattermost.";
+"mobile.managed.not_secured.android" = "Denne enhed skal sikres med en skærmlås for at bruge Dumont Chat.";
 "mobile.managed.not_secured.android.vendor" = "Denne enhed skal sikres med en skærmlås for at bruge {vendor}.";
-"mobile.managed.not_secured.ios" = "Denne enhed skal sikres med biometri eller adgangskode for at bruge Mattermost.
+"mobile.managed.not_secured.ios" = "Denne enhed skal sikres med biometri eller adgangskode for at bruge Dumont Chat.
 
 Gå til Indstillinger > Face ID & Adgangskode.";
 "mobile.managed.not_secured.ios.vendor" = "Denne enhed skal sikres med biometri eller adgangskode for at bruge {vendor}.
@@ -1038,7 +1038,7 @@ Gå til Indstillinger > Face ID & Adgangskode.";
 "mobile.server_requires_client_certificate" = "Serveren kræver et klientcertifikat til godkendelse.";
 "mobile.server_upgrade.button" = "OK";
 "mobile.server_upgrade.description" = "
-En serveropdatering er nødvendig for at bruge Mattermost-appen. Bed venligst din systemadministrator om detaljer.
+En serveropdatering er nødvendig for at bruge Dumont Chat-appen. Bed venligst din systemadministrator om detaljer.
 ";
 "mobile.server_upgrade.title" = "Serveropdatering påkrævet";
 "mobile.server_url.deeplink.emm.denied" = "Denne app styres af en EMM, og DeepLink-serverens URL stemmer ikke overens med den EMM-tilladte server";
@@ -1142,7 +1142,7 @@ En serveropdatering er nødvendig for at bruge Mattermost-appen. Bed venligst di
 "onboarding.realtime_collaboration" = "Samarbejd i realtid";
 "onboarding.realtime_collaboration_description" = "Permanente kanaler, direkte beskeder og fildeling fungerer problemfrit, så du kan holde kontakten, uanset hvor du er.";
 "onboarding.welcome" = "Velkommen";
-"onboaring.welcome_description" = "Mattermost er en open source-platform til udviklersamarbejde. Sikker, fleksibel og integreret med dine værktøjer.";
+"onboaring.welcome_description" = "Dumont Chat er en open source-platform til udviklersamarbejde. Sikker, fleksibel og integreret med dine værktøjer.";
 "password_send.description" = "For at nulstille din adgangskode skal du indtaste den e-mailadresse, du brugte til at tilmelde dig";
 "password_send.error" = "Indtast venligst en gyldig e-mailadresse.";
 "password_send.generic_error" = "Vi kunne ikke sende dig et link til nulstilling af adgangskode. Kontakt venligst din systemadministrator for hjælp.";
@@ -1380,7 +1380,7 @@ En serveropdatering er nødvendig for at bruge Mattermost-appen. Bed venligst di
 "rate.error.text" = "Der opstod en fejl under åbning af anmeldelsesvinduevisningen.";
 "rate.error.title" = "Fejl";
 "rate.subtitle" = "Fortæl os hvad du synes.";
-"rate.title" = "Nyder du Mattermost?";
+"rate.title" = "Nyder du Dumont Chat?";
 "report_a_problem.metadata.appPlatform" = "App Platform";
 "report_a_problem.metadata.appVersion" = "App-version";
 "report_a_problem.metadata.copy" = "Kopiér";
@@ -1541,7 +1541,7 @@ Du opretter muligvis forbindelse til en server, der udgiver sig for at være \"{
 "settings.about.license.load_metric" = "Belastningsmåling: {load}";
 "settings.about.license.load_metric.title" = "Belastningsmåling:";
 "settings.about.licensed" = "Licenseret til: {company}";
-"settings.about.powered_by" = "{site} er drevet af Mattermost";
+"settings.about.powered_by" = "{site} er drevet af Dumont Chat";
 "settings.about.server.version" = "Serverversion: {version} (Build {buildNumber})";
 "settings.about.server.version.noBuild" = "Serverversion: {version}";
 "settings.about.server.version.title" = "Serverversion:";
@@ -1558,7 +1558,7 @@ Dette sletter alle filer, der er downloadet via appen til denne server. Bekræft
 "settings.display" = "Visning";
 "settings.notice_mobile_link" = "mobile apps";
 "settings.notice_platform_link" = "server";
-"settings.notice_text" = "Mattermost er muliggjort af open source-software, der bruges i vores {platform} og {mobile}.";
+"settings.notice_text" = "Dumont Chat er muliggjort af open source-software, der bruges i vores {platform} og {mobile}.";
 "settings.notifications" = "Notifikationer";
 "settings.save" = "Gem";
 "settings_display.clock.mz" = "24-timers ur";
@@ -1572,7 +1572,7 @@ Dette sletter alle filer, der er downloadet via appen til denne server. Bekræft
 "settings_display.timezone.manual" = "Skift tidszone";
 "settings_display.timezone.off" = "Fra";
 "settings_display.timezone.select" = "Vælg tidszone";
-"share_extension.channel_error" = "Du er ikke medlem af et team på den valgte server. Vælg en anden server, eller åbn Mattermost for at tilmelde dig et team.";
+"share_extension.channel_error" = "Du er ikke medlem af et team på den valgte server. Vælg en anden server, eller åbn Dumont Chat for at tilmelde dig et team.";
 "share_extension.channel_label" = "Kanal";
 "share_extension.channels_screen.title" = "Vælg kanal";
 "share_extension.count_limit" = "Du kan kun dele {count, number} {count, plural, one {fil} other {filer}} på denne server";

@@ -3,7 +3,7 @@
 "about.enterpriseEditionSt" = "Модерна комуникация дори зад вашия firewall.";
 "about.hash" = "Хеш на компилация:";
 "about.hashee" = "Хеш на EE компилация:";
-"about.teamEditionLearn" = "Присъединете се към Mattermost общността на ";
+"about.teamEditionLearn" = "Присъединете се към Dumont Chat общността на ";
 "about.teamEditionSt" = "Цялата комуникация на вашия екип на едно място, с възможност за търсене и достъпна отвсякъде.";
 "about.teamEditiont0" = "Екипна версия";
 "about.teamEditiont1" = "Корпоративна версия";
@@ -199,11 +199,12 @@
 "mobile.ios.photos_permission_denied_title" = "Dumont Chat би искал да получи достъп до вашите снимки";
 "mobile.link.error.text" = "Неуспешно отваряне на връзка.";
 "mobile.link.error.title" = "Грешка";
+"mobile.login_options.gitlab" = "Dumont Auth";
 "mobile.managed.blocked_by" = "Блокиран от {vendor}";
 "mobile.managed.exit" = "Изход";
 "mobile.managed.jailbreak" = "{Vendor} не се доверява на Jailbroken устройства, моля излезте от приложението.";
-"mobile.managed.not_secured.android" = "Това устройство трябва да бъде защитено със заключване на екрана, за да се използва Mattermost.";
-"mobile.managed.not_secured.ios" = "Това устройство трябва да бъде защитено с парола за използване на Mattermost.
+"mobile.managed.not_secured.android" = "Това устройство трябва да бъде защитено със заключване на екрана, за да се използва Dumont Chat.";
+"mobile.managed.not_secured.ios" = "Това устройство трябва да бъде защитено с парола за използване на Dumont Chat.
 
 Отидете в Настройки> лицево ID и парола.";
 "mobile.managed.secured_by" = "Защитено от {vendor}";

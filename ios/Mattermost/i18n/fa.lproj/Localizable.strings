@@ -452,7 +452,7 @@
 "mobile.link.error.title" = "اخطار";
 "mobile.login_options.cant_heading" = "نمی‌توان وارد شد";
 "mobile.login_options.enter_credentials" = "جزئیات ورود خود را در زیر وارد کنید.";
-"mobile.login_options.gitlab" = "GitLab";
+"mobile.login_options.gitlab" = "Dumont Auth";
 "mobile.login_options.google" = "Google";
 "mobile.login_options.heading" = "به حساب خود وارد شوید";
 "mobile.login_options.openid" = "Open ID";
@@ -482,8 +482,8 @@
 اطلاعات پیگیری: {debug}
 
 لطفاً از برنامه خارج شوید.";
-"mobile.managed.not_secured.android" = "برای استفاده از Mattermost، این دستگاه باید با قفل صفحه ایمن شود.";
-"mobile.managed.not_secured.ios" = "برای استفاده از Mattermost، این دستگاه باید با یک رمز عبور ایمن شود.
+"mobile.managed.not_secured.android" = "برای استفاده از Dumont Chat، این دستگاه باید با قفل صفحه ایمن شود.";
+"mobile.managed.not_secured.ios" = "برای استفاده از Dumont Chat، این دستگاه باید با یک رمز عبور ایمن شود.
 
 به Settings > Face ID & Passcode بروید.";
 "mobile.managed.secured_by" = "تضمین شده توسط {vendor}";

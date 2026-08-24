@@ -3,9 +3,9 @@
 "about.enterpriseEditionSt" = "Nowoczesna komunikacja zza Twojej zapory sieciowej.";
 "about.hash" = "Hash Kompilacji:";
 "about.hashee" = "Hash Kompilacji Enterprise:";
-"about.mattermost" = "Mattermost";
-"about.planNameLearn" = "Dowiedz się więcej o Mattermost {planName} na stronie ";
-"about.teamEditionLearn" = "Dołącz do społeczności Mattermost na ";
+"about.mattermost" = "Dumont Chat";
+"about.planNameLearn" = "Dowiedz się więcej o Dumont Chat {planName} na stronie ";
+"about.teamEditionLearn" = "Dołącz do społeczności Dumont Chat na ";
 "about.teamEditionSt" = "Cała komunikacja Twojego zespołu w jednym miejscu, z możliwością natychmiastowego przeszukiwania i dostępna z dowolnego miejsca.";
 "about.teamEditiont0" = "Edytuj Zespół";
 "about.teamEditiont1" = "Wersja Enterprise";
@@ -473,9 +473,9 @@ Czy na pewno chcesz przekształcić {displayName} w kanał prywatny?";
 "emoji_skin.medium_dark_skin_tone" = "średnio szary odcień wyglądu";
 "emoji_skin.medium_light_skin_tone" = "średnio jasny odcień wyglądu";
 "emoji_skin.medium_skin_tone" = "średni odcień wyglądu";
-"extension.no_memberships.description" = "Aby udostępniać treści, musisz być członkiem zespołu na serwerze Mattermost.";
+"extension.no_memberships.description" = "Aby udostępniać treści, musisz być członkiem zespołu na serwerze Dumont Chat.";
 "extension.no_memberships.title" = "Nie jest jeszcze członkiem żadnego zespołu";
-"extension.no_servers.description" = "Aby udostępniać treści, musisz być zalogowany na serwerze Mattermost.";
+"extension.no_servers.description" = "Aby udostępniać treści, musisz być zalogowany na serwerze Dumont Chat.";
 "extension.no_servers.title" = "Nie podłączony do żadnych serwerów";
 "file_upload.fileAbove" = "Plik musi być mniejszy niż {max}";
 "find_channels.directory" = "Katalog";
@@ -578,7 +578,7 @@ Czy na pewno chcesz przekształcić {displayName} w kanał prywatny?";
 "invite.summary.try_again" = "Spróbuj ponownie";
 "invite.title" = "Zaproś";
 "invite.title.summary" = "Podsumowanie zaproszenia";
-"invite_people_to_team.message" = "Oto link do współpracy i komunikacji z nami na Mattermost.";
+"invite_people_to_team.message" = "Oto link do współpracy i komunikacji z nami na Dumont Chat.";
 "invite_people_to_team.title" = "Dołącz do zespołu {team}";
 "join_team.error.group_error" = "Musisz być członkiem grupy połączonej, żeby dołączyć do tego zespołu.";
 "join_team.error.message" = "Wystąpił błąd w dołączeniu do zespołu";
@@ -699,7 +699,7 @@ Czy na pewno chcesz przekształcić {displayName} w kanał prywatny?";
 "mobile.calls_limit_reached" = "Osiągnięty limit uczestników";
 "mobile.calls_lower_hand" = "Dolna ręka";
 "mobile.calls_make_host" = "Stwórz hosta";
-"mobile.calls_mic_error" = "Aby wziąć udział, otwórz Ustawienia, aby przyznać Mattermost dostęp do swojego mikrofonu.";
+"mobile.calls_mic_error" = "Aby wziąć udział, otwórz Ustawienia, aby przyznać Dumont Chat dostęp do swojego mikrofonu.";
 "mobile.calls_more" = "Więcej";
 "mobile.calls_mute" = "Wycisz";
 "mobile.calls_mute_others" = "Wycisz innych";
@@ -853,7 +853,7 @@ Kliknij \"ponowne uruchomienie\" aby zrestartować aplikację. Po restarcie moż
 "mobile.login_options.cant_heading" = "Nie można się zalogować";
 "mobile.login_options.enter_credentials" = "Wpisz poniżej swoje dane do logowania.";
 "mobile.login_options.entraid" = "Entra ID";
-"mobile.login_options.gitlab" = "GitLab";
+"mobile.login_options.gitlab" = "Dumont Auth";
 "mobile.login_options.google" = "Google";
 "mobile.login_options.heading" = "Zaloguj się na Swoje Konto";
 "mobile.login_options.none" = "Nie możesz jeszcze zalogować się na swoje konto. Musi być skonfigurowana co najmniej jedna opcja logowania. Skontaktuj się z administratorem systemu, aby uzyskać pomoc.";
@@ -883,9 +883,9 @@ Kliknij \"ponowne uruchomienie\" aby zrestartować aplikację. Po restarcie moż
 
 Aplikacja zostanie teraz zamknięta.";
 "mobile.managed.logout" = "Wyloguj";
-"mobile.managed.not_secured.android" = "To urządzenie musi zostać zabezpieczone blokadą ekranu, aby użyć Mattermost.";
+"mobile.managed.not_secured.android" = "To urządzenie musi zostać zabezpieczone blokadą ekranu, aby użyć Dumont Chat.";
 "mobile.managed.not_secured.android.vendor" = "To urządzenie musi być zabezpieczone blokadą ekranu, aby można było korzystać z {vendor}.";
-"mobile.managed.not_secured.ios" = "Aby korzystać z Mattermost, urządzenie musi być zabezpieczone danymi biometrycznymi lub kodem dostępu.
+"mobile.managed.not_secured.ios" = "Aby korzystać z Dumont Chat, urządzenie musi być zabezpieczone danymi biometrycznymi lub kodem dostępu.
 
 Przejdź do Ustawienia > Face ID i kod dostępu.";
 "mobile.managed.not_secured.ios.vendor" = "To urządzenie musi być zabezpieczone danymi biometrycznymi lub kodem dostępu, aby można było korzystać z {vendor}.
@@ -1010,7 +1010,7 @@ Przejdź do Ustawienia > Face ID i kod dostępu.";
 "mobile.server_requires_client_certificate" = "Serwer wymaga certyfikatu klienta do uwierzytelnienia.";
 "mobile.server_upgrade.button" = "OK";
 "mobile.server_upgrade.description" = "
-Do korzystania z aplikacji Mattermost wymagane jest uaktualnienie serwera. Proszę zapytać administratora systemu o szczegóły.
+Do korzystania z aplikacji Dumont Chat wymagane jest uaktualnienie serwera. Proszę zapytać administratora systemu o szczegóły.
 ";
 "mobile.server_upgrade.title" = "Wymagane uaktualnienie serwera";
 "mobile.server_url.deeplink.emm.denied" = "Ta aplikacja jest kontrolowana przez EMM, a adres url serwera DeepLink nie pasuje do dozwolonego serwera EMM";
@@ -1114,7 +1114,7 @@ Do korzystania z aplikacji Mattermost wymagane jest uaktualnienie serwera. Prosz
 "onboarding.realtime_collaboration" = "Współpracuj w czasie rzeczywistym";
 "onboarding.realtime_collaboration_description" = "Kanały stałe, wiadomości bezpośrednie i udostępnianie plików działają płynnie, dzięki czemu możesz pozostać w kontakcie, gdziekolwiek jesteś.";
 "onboarding.welcome" = "Witamy";
-"onboaring.welcome_description" = "Mattermost to platforma open source do współpracy programistów. Bezpieczna, elastyczna i zintegrowana z Twoimi narzędziami.";
+"onboaring.welcome_description" = "Dumont Chat to platforma open source do współpracy programistów. Bezpieczna, elastyczna i zintegrowana z Twoimi narzędziami.";
 "password_send.description" = "Aby zresetować hasło musisz podać e-mail, którego użyłeś w trakcie rejestracji";
 "password_send.error" = "Podaj poprawny adres e-mail.";
 "password_send.generic_error" = "Nie udało nam się wysłać do Ciebie linku resetującego hasło. Prosimy o kontakt z Administratorem Systemu w celu uzyskania pomocy.";
@@ -1350,7 +1350,7 @@ Do korzystania z aplikacji Mattermost wymagane jest uaktualnienie serwera. Prosz
 "rate.error.text" = "Wystąpił błąd podczas otwierania modalu recenzji.";
 "rate.error.title" = "Błąd";
 "rate.subtitle" = "Daj nam znać, co myślisz.";
-"rate.title" = "Podoba Ci się Mattermost?";
+"rate.title" = "Podoba Ci się Dumont Chat?";
 "report_a_problem.metadata.appPlatform" = "Platforma aplikacji";
 "report_a_problem.metadata.appVersion" = "Wersja aplikacji";
 "report_a_problem.metadata.copy" = "Kopiuj";
@@ -1510,7 +1510,7 @@ Możliwe, że łączysz się z serwerem podszywającym się pod \"{hostname}\", 
 "settings.about.license.load_metric" = "Metryka obciążenia: {load}";
 "settings.about.license.load_metric.title" = "Metryka obciążenia:";
 "settings.about.licensed" = "Licencjonowany dla: {company}";
-"settings.about.powered_by" = "{site} jest wspierane przez Mattermost";
+"settings.about.powered_by" = "{site} jest wspierane przez Dumont Chat";
 "settings.about.server.version" = "Wersja serwera: {version} (kompilacja {buildNumber}";
 "settings.about.server.version.noBuild" = "Wersja Serwera: {version}";
 "settings.about.server.version.title" = "Wersja serwera:";
@@ -1527,7 +1527,7 @@ Spowoduje to usunięcie wszystkich plików pobranych za pośrednictwem aplikacji
 "settings.display" = "Wygląd";
 "settings.notice_mobile_link" = "aplikacje mobilne";
 "settings.notice_platform_link" = "serwer";
-"settings.notice_text" = "Mattermost został stworzony dzięki oprogramowaniu open source używanym w naszej {platform} i {mobile}.";
+"settings.notice_text" = "Dumont Chat został stworzony dzięki oprogramowaniu open source używanym w naszej {platform} i {mobile}.";
 "settings.notifications" = "Powiadomienia";
 "settings.save" = "Zapisz";
 "settings_display.clock.mz" = "Zegar 24-godzinny";
@@ -1541,7 +1541,7 @@ Spowoduje to usunięcie wszystkich plików pobranych za pośrednictwem aplikacji
 "settings_display.timezone.manual" = "Zmień strefę czasową";
 "settings_display.timezone.off" = "Wyłącz";
 "settings_display.timezone.select" = "Wybierz Strefę Czasową";
-"share_extension.channel_error" = "Nie jesteś członkiem zespołu na wybranym serwerze. Wybierz inny serwer lub otwórz Mattermost, aby dołączyć do zespołu.";
+"share_extension.channel_error" = "Nie jesteś członkiem zespołu na wybranym serwerze. Wybierz inny serwer lub otwórz Dumont Chat, aby dołączyć do zespołu.";
 "share_extension.channel_label" = "Kanał";
 "share_extension.channels_screen.title" = "Wybierz kanał";
 "share_extension.count_limit" = "Na tym serwerze można udostępniać tylko {count, number} {count, plural, one {plik} other {plików}}";

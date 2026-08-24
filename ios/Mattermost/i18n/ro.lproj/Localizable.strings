@@ -3,7 +3,7 @@
 "about.enterpriseEditionSt" = "Comunicare modernă din spatele firewallului.";
 "about.hash" = "Construcția Hash:";
 "about.hashee" = "EE Construcția Hash:";
-"about.teamEditionLearn" = "Alăturați-vă comunității Mattermost la ";
+"about.teamEditionLearn" = "Alăturați-vă comunității Dumont Chat la ";
 "about.teamEditionSt" = "Toate comunicările echipei într-un singur loc, cautari instante și accesibile oriunde.";
 "about.teamEditiont0" = "Ediție de echipă";
 "about.teamEditiont1" = "Ediția Enterprise";
@@ -147,11 +147,12 @@ Faceți clic pe relansare pentru a deschide din nou aplicația. După repornire,
 "mobile.ios.photos_permission_denied_title" = "Este necesar accesul la biblioteca foto";
 "mobile.link.error.text" = "Imposibil de deschis linkul.";
 "mobile.link.error.title" = "Eroare";
+"mobile.login_options.gitlab" = "Dumont Auth";
 "mobile.managed.blocked_by" = "Blocat de {vendor}";
 "mobile.managed.exit" = "Iesi";
 "mobile.managed.jailbreak" = "Dispozitivele jailbroken nu au încredere în {vendor}, închideți aplicația.";
-"mobile.managed.not_secured.android" = "Acest dispozitiv trebuie să fie asigurat cu un dispozitiv de blocare a ecranului pentru a utiliza Mattermost.";
-"mobile.managed.not_secured.ios" = "Acest dispozitiv trebuie să fie securizat cu un cod de acces pentru a utiliza Mattermost.
+"mobile.managed.not_secured.android" = "Acest dispozitiv trebuie să fie asigurat cu un dispozitiv de blocare a ecranului pentru a utiliza Dumont Chat.";
+"mobile.managed.not_secured.ios" = "Acest dispozitiv trebuie să fie securizat cu un cod de acces pentru a utiliza Dumont Chat.
 
 Accesați Setări > ID-ul feței și codul de acces.";
 "mobile.managed.secured_by" = "Securizat de {vendor}";

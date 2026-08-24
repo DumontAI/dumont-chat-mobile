@@ -3,7 +3,7 @@
 "about.enterpriseEditionSt" = "Giao tiếp hiện đại từ phía sau tường lửa của bạn.";
 "about.hash" = "Mã bản biên dịch:";
 "about.hashee" = "EE Build Hash:";
-"about.teamEditionLearn" = "Tham gia cộng đồng Mattermost";
+"about.teamEditionLearn" = "Tham gia cộng đồng Dumont Chat";
 "about.teamEditionSt" = "Tất cả thông tin liên lạc trong đội của bạn ở một nơi, có thể tìm kiếm ngay lập tức và có thể truy cập ở mọi nơi.";
 "about.teamEditiont0" = "Phiên bản cho Nhóm";
 "about.teamEditiont1" = "Phiên bản Doanh nghiệp";
@@ -311,9 +311,9 @@ Bạn có chắc chắn muốn chuyển đổi {displayName} thành một kênh 
 "emoji_skin.medium_dark_skin_tone" = "tông màu da trung bình tối";
 "emoji_skin.medium_light_skin_tone" = "tông màu da sáng trung bình";
 "emoji_skin.medium_skin_tone" = "màu da trung bình";
-"extension.no_memberships.description" = "Để chia sẻ nội dung, bạn cần phải là thành viên của một nhóm trên máy chủ Mattermost.";
+"extension.no_memberships.description" = "Để chia sẻ nội dung, bạn cần phải là thành viên của một nhóm trên máy chủ Dumont Chat.";
 "extension.no_memberships.title" = "Chưa là thành viên của đội nào";
-"extension.no_servers.description" = "Để chia sẻ nội dung, bạn cần đăng nhập vào máy chủ Mattermost.";
+"extension.no_servers.description" = "Để chia sẻ nội dung, bạn cần đăng nhập vào máy chủ Dumont Chat.";
 "extension.no_servers.title" = "Không được kết nối với bất kỳ máy chủ nào";
 "file_upload.fileAbove" = "Tệp phải nhỏ hơn {max}";
 "find_channels.directory" = "Danh mục";
@@ -386,7 +386,7 @@ Bạn có chắc chắn muốn chuyển đổi {displayName} thành một kênh 
 "invite.summary.try_again" = "Thử lại";
 "invite.title" = "Mời";
 "invite.title.summary" = "Tóm tắt lời mời";
-"invite_people_to_team.message" = "Đây là một liên kết để cộng tác và giao tiếp với chúng tôi trên Mattermost.";
+"invite_people_to_team.message" = "Đây là một liên kết để cộng tác và giao tiếp với chúng tôi trên Dumont Chat.";
 "invite_people_to_team.title" = "Tham gia nhóm {team}";
 "join_team.error.group_error" = "Bạn cần phải là thành viên của một nhóm được liên kết để tham gia nhóm này.";
 "join_team.error.message" = "Đã xảy ra lỗi khi tham gia nhóm";
@@ -429,7 +429,7 @@ Bạn có chắc chắn muốn chuyển đổi {displayName} thành một kênh 
 "mobile.action_menu.select" = "Chọn một tuỳ chọn";
 "mobile.add_team.join_team" = "Tham gia nhóm khác";
 "mobile.android.back_handler_exit" = "Nhấn quay lại một lần nữa để thoát";
-"mobile.android.photos_permission_denied_description" = "Tải ảnh lên phiên bản Mattermost của bạn hoặc lưu chúng vào thiết bị của bạn. Mở Cài đặt để cấp quyền truy cập Đọc và ghi vào thư viện ảnh của bạn.";
+"mobile.android.photos_permission_denied_description" = "Tải ảnh lên phiên bản Dumont Chat của bạn hoặc lưu chúng vào thiết bị của bạn. Mở Cài đặt để cấp quyền truy cập Đọc và ghi vào thư viện ảnh của bạn.";
 "mobile.android.photos_permission_denied_title" = "Dumont Chat muốn truy cập ảnh của bạn";
 "mobile.announcement_banner.title" = "Thông báo";
 "mobile.calls_bluetooth" = "Bluetooth";
@@ -465,7 +465,7 @@ Bạn có chắc chắn muốn chuyển đổi {displayName} thành một kênh 
 "mobile.calls_limit_msg_GA" = "Nâng cấp lên Cloud Professional hoặc Cloud Enterprise để kích hoạt cuộc gọi nhóm với hơn {maxParticipants} người tham gia.";
 "mobile.calls_limit_reached" = "Đã đạt đến giới hạn người tham gia";
 "mobile.calls_lower_hand" = "Đặt tay xuống";
-"mobile.calls_mic_error" = "Để tham gia, hãy mở Cài đặt để cấp quyền truy cập Mattermost vào micrô của bạn.";
+"mobile.calls_mic_error" = "Để tham gia, hãy mở Cài đặt để cấp quyền truy cập Dumont Chat vào micrô của bạn.";
 "mobile.calls_more" = "Thêm";
 "mobile.calls_mute" = "Tắt tiếng";
 "mobile.calls_name_is_talking_postfix" = "đang nói...";
@@ -502,7 +502,7 @@ Bạn có chắc chắn muốn chuyển đổi {displayName} thành một kênh 
 "mobile.calls_viewing_screen" = "Bạn đang xem màn hình của {name}";
 "mobile.calls_you" = "(bạn)";
 "mobile.calls_you_2" = "Bạn";
-"mobile.camera_photo_permission_denied_description" = "Chụp ảnh và tải chúng lên phiên bản Mattermost của bạn hoặc lưu chúng vào thiết bị của bạn. Mở Cài đặt để cấp quyền truy cập Đọc và ghi máy ảnh của bạn cho Mattermost.";
+"mobile.camera_photo_permission_denied_description" = "Chụp ảnh và tải chúng lên phiên bản Dumont Chat của bạn hoặc lưu chúng vào thiết bị của bạn. Mở Cài đặt để cấp quyền truy cập Đọc và ghi máy ảnh của bạn cho Dumont Chat.";
 "mobile.camera_photo_permission_denied_title" = "Dumont Chat muốn truy cập vào máy ảnh của bạn";
 "mobile.channel_add_members.error" = "Đã xảy ra lỗi và chúng tôi không thể thêm những người dùng đó vào kênh.";
 "mobile.channel_info.alertNo" = "Không";
@@ -562,7 +562,7 @@ Nhấn khởi chạy lại để mở lại ứng dụng. Sau khi khởi động
 "mobile.gallery.title" = "{index} / {total}";
 "mobile.integration_selector.loading_channels" = "Đang tải kênh...";
 "mobile.integration_selector.loading_options" = "Đang tải tùy chọn...";
-"mobile.ios.photos_permission_denied_description" = "Tải ảnh và video lên phiên bản Mattermost của bạn hoặc lưu chúng vào thiết bị của bạn. Mở Cài đặt để cấp quyền truy cập Đọc và ghi vào thư viện ảnh và video của bạn cho Mattermost.";
+"mobile.ios.photos_permission_denied_description" = "Tải ảnh và video lên phiên bản Dumont Chat của bạn hoặc lưu chúng vào thiết bị của bạn. Mở Cài đặt để cấp quyền truy cập Đọc và ghi vào thư viện ảnh và video của bạn cho Dumont Chat.";
 "mobile.ios.photos_permission_denied_title" = "Dumont Chat muốn truy cập ảnh của bạn";
 "mobile.join_channel.error" = "Chúng tôi không thể mở một tin nhắn trực tiếp với {displayName}. Vui lòng kiểm tra kết nối của bạn và thử lại.";
 "mobile.leave_and_join_confirmation" = "Rời khỏi & Tham gia";
@@ -572,7 +572,7 @@ Nhấn khởi chạy lại để mở lại ứng dụng. Sau khi khởi động
 "mobile.link.error.title" = "Lỗi";
 "mobile.login_options.cant_heading" = "Không thể đăng nhập";
 "mobile.login_options.enter_credentials" = "Nhập thông tin đăng nhập của bạn dưới đây.";
-"mobile.login_options.gitlab" = "GitLab";
+"mobile.login_options.gitlab" = "Dumont Auth";
 "mobile.login_options.google" = "Google";
 "mobile.login_options.heading" = "Đăng nhập vào tài khoản của bạn";
 "mobile.login_options.none" = "Bạn chưa thể đăng nhập vào tài khoản của mình. Ít nhất một tùy chọn đăng nhập phải được cấu hình. Liên hệ với Quản trị viên hệ thống của bạn để được hỗ trợ.";
@@ -605,8 +605,8 @@ Lý do {reason}
 Thông tin gỡ lỗi: {debug}
 
 Vui lòng thoát khỏi ứng dụng.";
-"mobile.managed.not_secured.android" = "Thiết bị này phải được bảo mật bằng khóa màn hình để sử dụng Mattermost.";
-"mobile.managed.not_secured.ios" = "Thiết bị này phải được bảo mật bằng mật mã để sử dụng Mattermost.
+"mobile.managed.not_secured.android" = "Thiết bị này phải được bảo mật bằng khóa màn hình để sử dụng Dumont Chat.";
+"mobile.managed.not_secured.ios" = "Thiết bị này phải được bảo mật bằng mật mã để sử dụng Dumont Chat.
 
 Chuyển đến Cài đặt > Face ID & Mật mã.";
 "mobile.managed.secured_by" = "Được bảo đảm bởi {vendor}";
@@ -699,7 +699,7 @@ Chuyển đến Cài đặt > Face ID & Mật mã.";
 "mobile.server_requires_client_certificate" = "Máy chủ yêu cầu chứng chỉ ứng dụng khách để xác thực.";
 "mobile.server_upgrade.button" = "Đồng ý";
 "mobile.server_upgrade.description" = "
-Cần nâng cấp máy chủ để sử dụng ứng dụng Mattermost. Vui lòng hỏi Quản trị viên hệ thống của bạn để biết chi tiết.
+Cần nâng cấp máy chủ để sử dụng ứng dụng Dumont Chat. Vui lòng hỏi Quản trị viên hệ thống của bạn để biết chi tiết.
 ";
 "mobile.server_upgrade.title" = "Yêu cầu nâng cấp máy chủ";
 "mobile.server_url.deeplink.emm.denied" = "Ứng dụng này được kiểm soát bởi EMM và url máy chủ DeepLink không khớp với máy chủ cho phép EMM";
@@ -707,7 +707,7 @@ Cần nâng cấp máy chủ để sử dụng ứng dụng Mattermost. Vui lòn
 "mobile.server_url.invalid_format" = "Phải bắt đầu bằng http: // hoặc https: //";
 "mobile.session_expired.title" = "Phiên hết hạn";
 "mobile.set_status.dnd" = "Đừng làm phiền";
-"mobile.storage_permission_denied_description" = "Tải tệp lên phiên bản Mattermost của bạn. Mở Cài đặt để cấp quyền truy cập Đọc và ghi tệp trên thiết bị này cho Mattermost.";
+"mobile.storage_permission_denied_description" = "Tải tệp lên phiên bản Dumont Chat của bạn. Mở Cài đặt để cấp quyền truy cập Đọc và ghi tệp trên thiết bị này cho Dumont Chat.";
 "mobile.storage_permission_denied_title" = "Dumont Chat muốn truy cập tệp của bạn";
 "mobile.suggestion.members" = "Các thành viên";
 "mobile.system_message.channel_archived_message" = "{username} đã lưu trữ kênh";
@@ -779,7 +779,7 @@ Cần nâng cấp máy chủ để sử dụng ứng dụng Mattermost. Vui lòn
 "onboarding.realtime_collaboration" = "Cộng tác trong thời gian thực";
 "onboarding.realtime_collaboration_description" = "Các kênh liên tục, nhắn tin trực tiếp và chia sẻ tệp hoạt động liền mạch để bạn có thể duy trì kết nối mọi lúc mọi nơi.";
 "onboarding.welcome" = "Chào mừng";
-"onboaring.welcome_description" = "Mattermost là một nền tảng mã nguồn mở dành cho sự hợp tác của các nhà phát triển. An toàn, linh hoạt và tích hợp với các công cụ của bạn.";
+"onboaring.welcome_description" = "Dumont Chat là một nền tảng mã nguồn mở dành cho sự hợp tác của các nhà phát triển. An toàn, linh hoạt và tích hợp với các công cụ của bạn.";
 "password_send.description" = "Để đặt lại mật khẩu của bạn, hãy nhập địa chỉ email bạn đã sử dụng để đăng ký";
 "password_send.error" = "Vui lòng nhập một địa chỉ email hợp lệ.";
 "password_send.generic_error" = "Chúng tôi không thể gửi cho bạn liên kết đặt lại mật khẩu. Vui lòng liên hệ với Quản trị viên hệ thống của bạn để được hỗ trợ.";
@@ -886,7 +886,7 @@ Cần nâng cấp máy chủ để sử dụng ứng dụng Mattermost. Vui lòn
 "rate.error.text" = "Đã xảy ra lỗi khi mở phương thức đánh giá.";
 "rate.error.title" = "Lỗi";
 "rate.subtitle" = "Cho chúng tôi biết bạn nghĩ gì.";
-"rate.title" = "Bạn thích Mattermost chứ?";
+"rate.title" = "Bạn thích Dumont Chat chứ?";
 "requested_ack.title" = "Yêu cầu xác nhận";
 "saved_messages.empty.paragraph" = "Để lưu nội dung nào đó để sử dụng sau này, hãy nhấn và giữ một tin nhắn và chọn Lưu từ menu. Tin nhắn đã lưu chỉ hiển thị với bạn.";
 "saved_messages.empty.title" = "Chưa có tin nhắn nào được lưu";
@@ -954,7 +954,7 @@ Bạn có thể đang kết nối với một máy chủ giả danh “{hostname
 "settings.about.database.schema.title" = "Phiên Bản Lược Đồ CSDL:";
 "settings.about.database.title" = "Cơ sở dữ liệu:";
 "settings.about.licensed" = "Giấy phép được cấp: {company}";
-"settings.about.powered_by" = "{site} được cung cấp bởi Mattermost";
+"settings.about.powered_by" = "{site} được cung cấp bởi Dumont Chat";
 "settings.about.server.version" = "Phiên bản Máy chủ: {version} (Số bản tạo {buildNumber}";
 "settings.about.server.version.noBuild" = "Phiên bản Máy chủ: {version}";
 "settings.about.server.version.title" = "Phiên bản Máy chủ:";
@@ -983,7 +983,7 @@ Bạn có thể đang kết nối với một máy chủ giả danh “{hostname
 "settings_display.timezone.manual" = "Đổi múi giờ";
 "settings_display.timezone.off" = "Tắt";
 "settings_display.timezone.select" = "Chọn múi giờ";
-"share_extension.channel_error" = "Bạn không phải là thành viên của một nhóm trên máy chủ đã chọn. Chọn một máy chủ khác hoặc mở Mattermost để tham gia một nhóm.";
+"share_extension.channel_error" = "Bạn không phải là thành viên của một nhóm trên máy chủ đã chọn. Chọn một máy chủ khác hoặc mở Dumont Chat để tham gia một nhóm.";
 "share_extension.channel_label" = "Kênh";
 "share_extension.channels_screen.title" = "Chọn kênh";
 "share_extension.count_limit" = "Bạn chỉ có thể chia sẻ {count, number} {count, plural, one {tệp} other {tệp}} trên máy chủ này";

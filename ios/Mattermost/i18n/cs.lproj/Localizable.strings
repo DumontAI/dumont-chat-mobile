@@ -3,9 +3,9 @@
 "about.enterpriseEditionSt" = "Moderní komunikace za vaším firewallem.";
 "about.hash" = "Kód sestavení:";
 "about.hashee" = "Kód sestavení EE:";
-"about.mattermost" = "Mattermost";
-"about.planNameLearn" = "Více informací o platformě Mattermost najdete na {planName} ";
-"about.teamEditionLearn" = "Přidejte se ke komunitě Mattermost na ";
+"about.mattermost" = "Dumont Chat";
+"about.planNameLearn" = "Více informací o platformě Dumont Chat najdete na {planName} ";
+"about.teamEditionLearn" = "Přidejte se ke komunitě Dumont Chat na ";
 "about.teamEditionSt" = "Veškerá komunikace vašeho týmu na jednom místě, okamžitě prohledatelná a dostupná odkudkoliv.";
 "about.teamEditiont0" = "Týmová edice";
 "about.teamEditiont1" = "Enterprise edice";
@@ -384,9 +384,9 @@ Jste si jisti, že chcete převést {displayName} na soukromý kanál?";
 "emoji_skin.medium_dark_skin_tone" = "středně tmavý odstín pleti";
 "emoji_skin.medium_light_skin_tone" = "středně světlý odstín pleti";
 "emoji_skin.medium_skin_tone" = "střední odstín pleti";
-"extension.no_memberships.description" = "K sdílení obsahu musíte být členem týmu na serveru Mattermost.";
+"extension.no_memberships.description" = "K sdílení obsahu musíte být členem týmu na serveru Dumont Chat.";
 "extension.no_memberships.title" = "Zatím nejste členem žádného týmu";
-"extension.no_servers.description" = "K sdílení obsahu musíte být přihlášen na server Mattermost.";
+"extension.no_servers.description" = "K sdílení obsahu musíte být přihlášen na server Dumont Chat.";
 "extension.no_servers.title" = "Nejste připojen k žádným serverům";
 "file_upload.fileAbove" = "Soubory musí být menší než {max}";
 "find_channels.directory" = "Adresář";
@@ -484,7 +484,7 @@ Jste si jisti, že chcete převést {displayName} na soukromý kanál?";
 "invite.summary.try_again" = "Zkuste znovu";
 "invite.title" = "Pozvat";
 "invite.title.summary" = "Souhrn pozvánek";
-"invite_people_to_team.message" = "Zde je odkaz pro spolupráci a komunikaci s námi na Mattermostu.";
+"invite_people_to_team.message" = "Zde je odkaz pro spolupráci a komunikaci s námi na Dumont Chatu.";
 "invite_people_to_team.title" = "Připojit se k {team} týmu";
 "join_team.error.group_error" = "Musíte být členem propojené skupiny, abyste se mohli připojit k tomuto týmu.";
 "join_team.error.message" = "Při připojování k týmu došlo k chybě";
@@ -600,7 +600,7 @@ Jste si jisti, že chcete převést {displayName} na soukromý kanál?";
 "mobile.calls_limit_reached" = "Byl dosažen limit účastníků";
 "mobile.calls_lower_hand" = "Snížit zvednutou ruku";
 "mobile.calls_make_host" = "Udělat hostitelem";
-"mobile.calls_mic_error" = "Pro účast otevřete Nastavení a udělte Mattermost přístup k vašemu mikrofonu.";
+"mobile.calls_mic_error" = "Pro účast otevřete Nastavení a udělte Dumont Chat přístup k vašemu mikrofonu.";
 "mobile.calls_more" = "Více";
 "mobile.calls_mute" = "Ztlumit";
 "mobile.calls_mute_others" = "Ztlumit ostatní";
@@ -743,7 +743,7 @@ Klepněte na znovu spustit, abyste aplikaci otevřeli znovu. Po restartu můžet
 "mobile.login_options.cant_heading" = "Nelze se přihlásit";
 "mobile.login_options.enter_credentials" = "Zadejte své přihlašovací údaje níže.";
 "mobile.login_options.entraid" = "Entra ID";
-"mobile.login_options.gitlab" = "GitLab";
+"mobile.login_options.gitlab" = "Dumont Auth";
 "mobile.login_options.google" = "Google";
 "mobile.login_options.heading" = "Přihlaste se ke Svému Účtu";
 "mobile.login_options.none" = "Nemůžete se ještě přihlásit ke svému účtu. Musí být nakonfigurována alespoň jedna přihlašovací možnost. Kontaktujte svého správce systému pro pomoc.";
@@ -773,9 +773,9 @@ Klepněte na znovu spustit, abyste aplikaci otevřeli znovu. Po restartu můžet
 
 Aplikace se nyní zavře.";
 "mobile.managed.logout" = "Odhlášení";
-"mobile.managed.not_secured.android" = "Toto zařízení musí být zabezpečeno uzamčením obrazovky, aby bylo možné používat Mattermost.";
+"mobile.managed.not_secured.android" = "Toto zařízení musí být zabezpečeno uzamčením obrazovky, aby bylo možné používat Dumont Chat.";
 "mobile.managed.not_secured.android.vendor" = "Toto zařízení musí být zabezpečeno pomocí zámku obrazovky pro použití {vendor}.";
-"mobile.managed.not_secured.ios" = "Toto zařízení musí být zabezpečeno pomocí biometrie nebo kódu pro použití Mattermost.
+"mobile.managed.not_secured.ios" = "Toto zařízení musí být zabezpečeno pomocí biometrie nebo kódu pro použití Dumont Chat.
 
 Přejděte do Nastavení > Face ID a kód.";
 "mobile.managed.not_secured.ios.vendor" = "Toto zařízení musí být zabezpečeno pomocí biometrie nebo kódu pro použití {vendor}.
@@ -898,7 +898,7 @@ Přejděte do Nastavení > Face ID a kód.";
 "mobile.server_requires_client_certificate" = "Server vyžaduje klientský certifikát pro autentizaci.";
 "mobile.server_upgrade.button" = "Okay";
 "mobile.server_upgrade.description" = "
-Pro použití aplikace Mattermost je vyžadována aktualizace serveru. Prosím, požádejte svého správce systému o podrobnosti.
+Pro použití aplikace Dumont Chat je vyžadována aktualizace serveru. Prosím, požádejte svého správce systému o podrobnosti.
 ";
 "mobile.server_upgrade.title" = "Vyžadován upgrade serveru";
 "mobile.server_url.deeplink.emm.denied" = "Tato aplikace je řízena EMM a URL adresa serveru DeepLink se neshoduje s povoleným serverem EMM";
@@ -995,7 +995,7 @@ Pro použití aplikace Mattermost je vyžadována aktualizace serveru. Prosím, 
 "onboarding.realtime_collaboration" = "Spolupracujte v reálném čase";
 "onboarding.realtime_collaboration_description" = "Trvalé kanály, přímé zprávy a sdílení souborů fungují bez problémů, takže můžete zůstat ve spojení, ať jste kdekoli.";
 "onboarding.welcome" = "Vítejte";
-"onboaring.welcome_description" = "Mattermost je open source platforma pro spolupráci vývojářů. Bezpečná, flexibilní a integrovaná s vašimi nástroji.";
+"onboaring.welcome_description" = "Dumont Chat je open source platforma pro spolupráci vývojářů. Bezpečná, flexibilní a integrovaná s vašimi nástroji.";
 "password_send.description" = "Chcete-li obnovit heslo, zadejte e-mail adresu, kterou jste použili při registraci";
 "password_send.error" = "Zadejte, prosím, platnou e-mailovou adresu.";
 "password_send.generic_error" = "Nepodařilo se nám vám odeslat odkaz pro resetování hesla. Obraťte se prosím na svého systémového správce pro pomoc.";
@@ -1224,7 +1224,7 @@ Pro použití aplikace Mattermost je vyžadována aktualizace serveru. Prosím, 
 "rate.error.text" = "Při otevírání okna pro recenzi došlo k chybě.";
 "rate.error.title" = "Chyba";
 "rate.subtitle" = "Dejte nám vědět, co si o tom myslíte.";
-"rate.title" = "Baví vás Mattermost?";
+"rate.title" = "Baví vás Dumont Chat?";
 "report_a_problem.metadata.appPlatform" = "Platforma aplikace";
 "report_a_problem.metadata.appVersion" = "Verze aplikace";
 "report_a_problem.metadata.copy" = "Kopírovat";
@@ -1366,7 +1366,7 @@ Můžete se připojovat k serveru, který se vydává za „{hostname}“, což 
 "settings.about.license.load_metric" = "Metrika zatížení: {load}";
 "settings.about.license.load_metric.title" = "Metrika zatížení:";
 "settings.about.licensed" = "Licencováno: {company}";
-"settings.about.powered_by" = "{site} používá Mattermost";
+"settings.about.powered_by" = "{site} používá Dumont Chat";
 "settings.about.server.version" = "Verze Serveru: {version} (Build {buildNumber})";
 "settings.about.server.version.noBuild" = "Verze Serveru: {version}";
 "settings.about.server.version.title" = "Verze Serveru:";
@@ -1383,7 +1383,7 @@ Toto smaže všechny soubory stažené prostřednictvím aplikace pro tento serv
 "settings.display" = "Zobrazení";
 "settings.notice_mobile_link" = "mobilní aplikace";
 "settings.notice_platform_link" = "server";
-"settings.notice_text" = "Mattermost je vytvořený díky softwaru s otevřeným zdrojovým kódem, který se používá na naší {platform} a {mobile}.";
+"settings.notice_text" = "Dumont Chat je vytvořený díky softwaru s otevřeným zdrojovým kódem, který se používá na naší {platform} a {mobile}.";
 "settings.notifications" = "Oznámení";
 "settings.save" = "Uložit";
 "settings_display.clock.mz" = "24hodinový formát času";
@@ -1397,7 +1397,7 @@ Toto smaže všechny soubory stažené prostřednictvím aplikace pro tento serv
 "settings_display.timezone.manual" = "Změnit časové pásmo";
 "settings_display.timezone.off" = "Vypnuto";
 "settings_display.timezone.select" = "Vybrat časovou zónu";
-"share_extension.channel_error" = "Nejste členem týmu na zvoleném serveru. Zvolte jiný server nebo otevřete Mattermost pro připojení k týmu.";
+"share_extension.channel_error" = "Nejste členem týmu na zvoleném serveru. Zvolte jiný server nebo otevřete Dumont Chat pro připojení k týmu.";
 "share_extension.channel_label" = "Kanál";
 "share_extension.channels_screen.title" = "Vybrat kanál";
 "share_extension.count_limit" = "Můžete sdílet jen {count, number} {count, plural, one {soubor} other {souborů}} na tomto serveru";

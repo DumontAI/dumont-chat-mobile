@@ -1,7 +1,6 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
-import {useManagedConfig} from '@mattermost/react-native-emm';
 import {useIsFocused, useNavigation, useRoute} from '@react-navigation/native';
 import React, {useCallback, useEffect} from 'react';
 import {useIntl} from 'react-intl';
@@ -14,7 +13,6 @@ import {refetchCurrentUser} from '@actions/remote/user';
 import FloatingCallContainer from '@calls/components/floating_call_container';
 import AnnouncementBanner from '@components/announcement_banner';
 import ConnectionBanner from '@components/connection_banner';
-import TeamSidebar from '@components/team_sidebar';
 import {Screens} from '@constants';
 import {HOME_TAB_SCREENS} from '@constants/screens';
 import {useServerUrl} from '@context/server';
@@ -30,7 +28,6 @@ import {addSentryContext} from '@utils/sentry';
 
 import AdditionalTabletView from './additional_tablet_view';
 import CategoriesList from './categories_list';
-import Servers from './servers';
 
 import type {LaunchType} from '@typings/launch';
 
@@ -72,7 +69,6 @@ let hasRendered = false;
 
 const ChannelListScreen = (props: ChannelProps) => {
     const theme = useTheme();
-    const managedConfig = useManagedConfig<ManagedConfig>();
     const intl = useIntl();
 
     const isTablet = useIsTablet();
@@ -83,7 +79,6 @@ const ChannelListScreen = (props: ChannelProps) => {
     const insets = useSafeAreaInsets();
     const serverUrl = useServerUrl();
     const params = route.params as {direction: string};
-    const canAddOtherServers = managedConfig?.allowOtherServers !== 'false';
     const isTabScreen = currentScreen && HOME_TAB_SCREENS.has(currentScreen);
 
     const handleBackPress = useCallback(() => {
@@ -204,16 +199,13 @@ const ChannelListScreen = (props: ChannelProps) => {
             <AnnouncementBanner/>
             }
             <View style={styles.content}>
-                {canAddOtherServers && <Servers/>}
+                {/* Dumont Chat talks to one server, and teams are chosen from the
+                    team name at the top rather than a left-hand rail. */}
                 <Animated.View
                     style={[styles.content, animated]}
                 >
-                    <TeamSidebar
-                        iconPad={canAddOtherServers}
-                        hasMoreThanOneTeam={props.hasMoreThanOneTeam}
-                    />
                     <CategoriesList
-                        iconPad={canAddOtherServers && !props.hasMoreThanOneTeam}
+                        iconPad={false}
                         isCRTEnabled={props.isCRTEnabled}
                         moreThanOneTeam={props.hasMoreThanOneTeam}
                         hasChannels={props.hasChannels}

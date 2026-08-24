@@ -79,6 +79,7 @@ const enhanced = withObservables([], ({database, serverUrl}: EnhanceProps) => {
             switchMap((t) => of$(t?.displayName)),
             distinctUntilChanged(),
         ),
+        teamsCount,
         hasMoreThanOneTeam: teamsCount.pipe(
             switchMap((v) => of$(v > 1)),
             distinctUntilChanged(),
