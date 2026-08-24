@@ -9,6 +9,7 @@ import Animated, {useAnimatedStyle, useSharedValue, withTiming} from 'react-nati
 import {logout} from '@actions/remote/session';
 import CompassIcon from '@components/compass_icon';
 import {ITEM_HEIGHT} from '@components/slide_up_panel_item';
+import TeamIcon from '@components/team_sidebar/team_list/team_item/team_icon';
 import TouchableWithFeedback from '@components/touchable_with_feedback';
 import {PUSH_PROXY_STATUS_NOT_AVAILABLE, PUSH_PROXY_STATUS_VERIFIED} from '@constants/push_proxy';
 import {HOME_PADDING} from '@constants/view';
@@ -38,12 +39,18 @@ type Props = {
     currentTeamId: string;
     displayName?: string;
     teamsCount?: number;
+    lastIconUpdate?: number;
     hasMoreThanOneTeam: boolean;
     iconPad?: boolean;
     pushProxyStatus: string;
 }
 
 const getStyles = makeStyleSheetFromTheme((theme: Theme) => ({
+    teamIcon: {
+        width: 28,
+        height: 28,
+        marginRight: 8,
+    },
     headingStyles: {
         color: theme.sidebarText,
         ...typography('Heading', 700),
@@ -123,6 +130,7 @@ const ChannelListHeader = ({
     iconPad,
     pushProxyStatus,
     teamsCount = 0,
+    lastIconUpdate = 0,
 }: Props) => {
     const theme = useTheme();
     const intl = useIntl();
@@ -217,6 +225,16 @@ const ChannelListHeader = ({
                             style={teamPressableStyle}
                             testID='channel_list_header.team.button'
                         >
+                            <View style={styles.teamIcon}>
+                                <TeamIcon
+                                    id={currentTeamId}
+                                    lastIconUpdate={lastIconUpdate}
+                                    displayName={displayName}
+                                    selected={false}
+                                    smallText={true}
+                                    testID='channel_list_header.team_icon'
+                                />
+                            </View>
                             <Text
                                 numberOfLines={2}
                                 ellipsizeMode='tail'

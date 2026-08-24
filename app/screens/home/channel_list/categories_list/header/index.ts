@@ -75,6 +75,10 @@ const enhanced = withObservables([], ({database, serverUrl}: EnhanceProps) => {
             switchMap((t) => of$(t?.id ?? '')),
             distinctUntilChanged(),
         ),
+        lastIconUpdate: team.pipe(
+            switchMap((t) => of$(t?.lastTeamIconUpdatedAt ?? 0)),
+            distinctUntilChanged(),
+        ),
         displayName: team.pipe(
             switchMap((t) => of$(t?.displayName)),
             distinctUntilChanged(),

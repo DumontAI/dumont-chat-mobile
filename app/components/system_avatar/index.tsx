@@ -1,21 +1,28 @@
 // Copyright (c) 2015-present Mattermost, Inc. All Rights Reserved.
 // See LICENSE.txt for license information.
 
+import {Image} from 'expo-image';
 import React from 'react';
 
-import CompassIcon from '@components/compass_icon';
 import {View as ViewConstants} from '@constants';
 
-type Props = {
-    theme: Theme;
-}
+// The web client swaps this avatar through injected CSS; mobile renders its own
+// component, which is why System posts still showed the upstream glyph here.
+const BRAND_MARK = require('@assets/images/dumont_mark.png');
 
-const SystemAvatar = ({theme}: Props) => {
+const style = {
+    width: ViewConstants.PROFILE_PICTURE_SIZE,
+    height: ViewConstants.PROFILE_PICTURE_SIZE,
+    borderRadius: ViewConstants.PROFILE_PICTURE_SIZE / 2,
+};
+
+const SystemAvatar = () => {
     return (
-        <CompassIcon
-            name='mattermost'
-            color={theme.centerChannelColor}
-            size={ViewConstants.PROFILE_PICTURE_SIZE}
+        <Image
+            source={BRAND_MARK}
+            style={style}
+            contentFit='cover'
+            accessibilityLabel='System'
         />
     );
 };
