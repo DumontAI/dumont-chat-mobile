@@ -1,10 +1,25 @@
 {
-  "name": "Mattermost",
-  "displayName": "Mattermost",
+  "name": "Dumont Chat",
+  "displayName": "Dumont Chat",
   "expo": {
+    "name": "Dumont Chat",
+    "slug": "dumont-chat",
+    "owner": "dumontai",
     "scheme": "mattermost",
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "ios": {
+      "bundleIdentifier": "chat.dumont.app"
+    },
+    "android": {
+      "package": "chat.dumont.app"
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "72633127-263b-4b10-866c-4eb4808fda57"
+      }
+    }
   }
 }
