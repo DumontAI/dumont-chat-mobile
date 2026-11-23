@@ -26,6 +26,10 @@ import {
 import type {ServersModel} from '@database/models/app';
 import type {DeepLinkWithData} from '@typings/launch';
 
+jest.mock('@assets/config.json', () => ({
+    ForceSsoProvider: undefined,
+}));
+
 jest.mock('@utils/helpers', () => ({
     isMinimumServerVersion: jest.fn(),
     isTablet: jest.fn(() => true),

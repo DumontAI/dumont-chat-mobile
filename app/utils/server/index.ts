@@ -54,6 +54,7 @@ export async function addNewServer(theme: Theme, serverUrl?: string, displayName
 export function loginOptions(config: ClientConfig, license: ClientLicense) {
     const isLicensed = license.IsLicensed === 'true';
     const samlEnabled = config.EnableSaml === 'true' && isLicensed && license.SAML === 'true';
+
     // Dumont Auth reaches the server through its GitLab OAuth provider. Server
     // v11 dropped EnableSignUpWithGitLab from the client config payload, so the
     // button disappeared even though /oauth/gitlab/mobile_login still works.
