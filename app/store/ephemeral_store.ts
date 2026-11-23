@@ -43,6 +43,9 @@ class EphemeralStoreSingleton {
     private acknowledgingPost = new Set<string>();
     private unacknowledgingPost = new Set<string>();
     private currentThreadId = '';
+    private currentChannelOldestVisibleCreateAt: number | undefined = undefined;
+    private currentFileViewerPostId = '';
+    private currentPlaybookRunId = '';
     private notificationTapped = false;
     private enablingCRT = false;
 
@@ -67,9 +70,17 @@ class EphemeralStoreSingleton {
     // option that is genuinely gone server-side does not trigger an infinite re-fetch loop.
     private classificationFieldSyncAttempted: {[serverUrl: string]: Set<string>} = {};
 
+    // Channels whose attribute values have been fetched from the server, so a
+    // repeated channel switch does not refetch. Values stay fresh afterwards via
+    // websocket events; the set is cleared when the connection drops.
+    private channelAttributeValuesSynced: {[serverUrl: string]: Set<string>} = {};
+
     // Track how many translations are being executed at the same time on the channel.
     // We limit this to avoid overwhelming the device.
     private runningTranslations = new Set<string>();
+
+    // Add-server candidate secret before a session exists (not safe in Expo Router params).
+    private pendingPreauthSecrets: {[serverUrl: string]: string | undefined} = {};
 
     addRunningTranslation = (postId: string) => {
         this.runningTranslations.add(postId);
@@ -86,6 +97,12 @@ class EphemeralStoreSingleton {
     // Track files that have been rejected by plugins (transient state)
     // Maps file ID to rejection reason
     private rejectedFiles = new Map<string, string>();
+
+    // Last viewable-items map emitted by each post list, keyed by location. ITEM_IN_VIEWPORT is
+    // fire-and-forget, so a subtree that mounts after the emit has no other way to learn it is on
+    // screen. Kept per location because several lists can be mounted at once (a thread over a
+    // channel) and a single shared map would let one list erase another's entries.
+    private viewableItems: {[location: string]: Record<string, boolean>} = {};
 
     setProcessingNotification = (v: string) => {
         this.processingNotification = v;
@@ -348,6 +365,26 @@ class EphemeralStoreSingleton {
         this.currentThreadId = id;
     };
 
+    getCurrentChannelOldestVisibleCreateAt = () => this.currentChannelOldestVisibleCreateAt;
+    setCurrentChannelOldestVisibleCreateAt = (value: number | undefined) => {
+        this.currentChannelOldestVisibleCreateAt = value;
+    };
+
+    // Protects the backing post from eviction while a file viewer is open.
+    getCurrentFileViewerPostId = () => this.currentFileViewerPostId;
+    setCurrentFileViewerPostId = (id: string) => {
+        this.currentFileViewerPostId = id;
+    };
+    clearCurrentFileViewerPostId = () => {
+        this.currentFileViewerPostId = '';
+    };
+
+    // Protects the viewed playbook run from rolling cache eviction.
+    getCurrentPlaybookRunId = () => this.currentPlaybookRunId;
+    setCurrentPlaybookRunId = (id: string) => {
+        this.currentPlaybookRunId = id;
+    };
+
     // Ephemeral control when (un)archiving a channel locally
     addSwitchingToChannel = (channelId: string) => {
         this.switchingToChannel.add(channelId);
@@ -489,6 +526,25 @@ class EphemeralStoreSingleton {
         delete this.classificationFieldSyncAttempted[serverUrl];
     };
 
+    getChannelAttributeValuesSynced = (serverUrl: string, channelId: string) => {
+        return this.channelAttributeValuesSynced[serverUrl]?.has(channelId) ?? false;
+    };
+
+    setChannelAttributeValuesSynced = (serverUrl: string, channelId: string) => {
+        if (!this.channelAttributeValuesSynced[serverUrl]) {
+            this.channelAttributeValuesSynced[serverUrl] = new Set();
+        }
+        this.channelAttributeValuesSynced[serverUrl]?.add(channelId);
+    };
+
+    unsetChannelAttributeValuesSynced = (serverUrl: string, channelId: string) => {
+        this.channelAttributeValuesSynced[serverUrl]?.delete(channelId);
+    };
+
+    clearChannelAttributeValuesSynced = (serverUrl: string) => {
+        delete this.channelAttributeValuesSynced[serverUrl];
+    };
+
     // Ephemeral control for rejected files
     addRejectedFile = (fileId: string, rejectionReason?: string) => {
         this.rejectedFiles.set(fileId, rejectionReason || '');
@@ -507,6 +563,37 @@ class EphemeralStoreSingleton {
 
     clearRejectedFiles = () => {
         this.rejectedFiles.clear();
+    };
+
+    setPendingPreauthSecret = (serverUrl: string, secret: string) => {
+        this.pendingPreauthSecrets[serverUrl] = secret;
+    };
+
+    getPendingPreauthSecret = (serverUrl: string) => {
+        return this.pendingPreauthSecrets[serverUrl];
+    };
+
+    clearPendingPreauthSecret = (serverUrl: string) => {
+        delete this.pendingPreauthSecrets[serverUrl];
+    };
+
+    // Ephemeral control for the items currently in a post list viewport
+    setViewableItems = (location: string, items: Record<string, boolean>) => {
+        this.viewableItems[location] = items;
+    };
+
+    // Merges rather than replaces: a permalink preview emits only for itself, and replacing the
+    // location's map would erase every sibling preview.
+    addViewableItem = (location: string, key: string) => {
+        this.viewableItems[location] = {...this.viewableItems[location], [key]: true};
+    };
+
+    isItemInViewPort = (key: string) => {
+        return Object.values(this.viewableItems).some((items) => Boolean(items[key]));
+    };
+
+    clearViewableItems = () => {
+        this.viewableItems = {};
     };
 }
 

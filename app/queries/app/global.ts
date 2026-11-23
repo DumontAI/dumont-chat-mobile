@@ -8,6 +8,7 @@ import {switchMap} from 'rxjs/operators';
 import {GLOBAL_IDENTIFIERS, MM_TABLES} from '@constants/database';
 import DatabaseManager from '@database/manager';
 
+import type {EphemeralModeAuditEvent} from '@constants/ephemeral_mode';
 import type GlobalModel from '@typings/database/models/app/global';
 
 const {APP: {GLOBAL}} = MM_TABLES;
@@ -60,6 +61,11 @@ export const getLastAskedForReview = async () => {
     return records[0].value;
 };
 
+export const getPreauthSecretMigrationDone = async () => {
+    const records = await queryGlobalValue(GLOBAL_IDENTIFIERS.PREAUTH_SECRET_MIGRATION)?.fetch();
+    return Boolean(records?.[0]?.value);
+};
+
 export const getDontAskForReview = async () => {
     const records = await queryGlobalValue(GLOBAL_IDENTIFIERS.DONT_ASK_FOR_REVIEW)?.fetch();
     return Boolean(records?.[0]?.value);
@@ -76,8 +82,11 @@ export const observePushDisabledInServerAcknowledged = (serverDomainString: stri
         return of$(false);
     }
     return query.observe().pipe(
-        switchMap((result) => (result.length ? result[0].observe() : of$(false))),
-        switchMap((v) => of$(Boolean(v))),
+
+        // Map the record's value, not the record. Boolean(model) is always true, so a row
+        // written with a null value (how the remove/reset paths clear these keys) read as set.
+        switchMap((result) => (result.length ? result[0].observe() : of$(undefined))),
+        switchMap((v) => of$(Boolean(v?.value))),
     );
 };
 
@@ -105,13 +114,21 @@ export const getLastViewedThreadIdAndServer = async () => {
     return records?.[0]?.value;
 };
 
+export const getEphemeralModeAuditEvents = async (serverUrl: string): Promise<EphemeralModeAuditEvent[]> => {
+    const records = await queryGlobalValue(`${GLOBAL_IDENTIFIERS.EPHEMERAL_MODE_AUDIT_QUEUE}${serverUrl}`)?.fetch();
+    return records?.[0]?.value ?? [];
+};
+
 export const observeTutorialWatched = (tutorial: string) => {
     const query = queryGlobalValue(tutorial);
     if (!query) {
         return of$(false);
     }
     return query.observe().pipe(
-        switchMap((result) => (result.length ? result[0].observe() : of$(false))),
-        switchMap((v) => of$(Boolean(v))),
+
+        // Map the record's value, not the record. Boolean(model) is always true, so a row
+        // written with a null value (how the remove/reset paths clear these keys) read as set.
+        switchMap((result) => (result.length ? result[0].observe() : of$(undefined))),
+        switchMap((v) => of$(Boolean(v?.value))),
     );
 };

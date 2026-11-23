@@ -16,6 +16,7 @@ import {
     needsRecordingWillBePostedAlert,
     showErrorAlertOnClose,
 } from '@calls/alerts';
+import {createCallAndAddToIds} from '@calls/convert_call';
 import {
     endNativeCall,
     mirrorMuteToNativeCall,
@@ -23,10 +24,12 @@ import {
     reportNativeCallConnected,
 } from '@calls/native_call';
 import {
+    cancelOutgoingCall,
     getCallsConfig,
     getCallsState,
     getChannelsWithCalls,
     getCurrentCall,
+    isLiveKitCurrentCall,
     myselfLeftCall,
     newCurrentCall,
     setCurrentCallConnected,
@@ -34,11 +37,13 @@ import {
     setCalls,
     setChannelEnabled,
     setConfig,
+    setJoiningChannelId,
     setPluginEnabled,
     setScreenShareURL,
+    startOutgoingCall,
 } from '@calls/state';
-import {type AudioDeviceType, type Call, type CallSession, type CallsConnection, EndCallReturn} from '@calls/types/calls';
-import {areGroupCallsAllowed} from '@calls/utils';
+import {type AudioDeviceType, type Call, type CallsConnection, EndCallReturn} from '@calls/types/calls';
+import {areGroupCallsAllowed, getCallsTransport} from '@calls/utils';
 import {General, Screens} from '@constants';
 import Calls from '@constants/calls';
 import DatabaseManager from '@database/manager';
@@ -50,17 +55,29 @@ import {getCurrentTeamId, setCurrentTeamId} from '@queries/servers/system';
 import {getThreadById} from '@queries/servers/thread';
 import {getCurrentUser} from '@queries/servers/user';
 import {navigateToRoot, dismissAllRoutesAndPopToScreen, navigateToScreen} from '@screens/navigation';
+import EphemeralStore from '@store/ephemeral_store';
+import {isDMChannel} from '@utils/channel';
 import {getFullErrorMessage} from '@utils/errors';
 import {logDebug} from '@utils/log';
 import {isSystemAdmin} from '@utils/user';
 
-import {newConnection} from '../connection/connection';
+import {newCallConnection} from '../connection';
 
-import type {CallChannelState, CallState, EmojiData} from '@mattermost/calls/lib/types';
+import type {CallChannelState, EmojiData} from '@mattermost/calls/lib/types';
 import type {IntlShape} from 'react-intl';
 
 let connection: CallsConnection | null = null;
 export const getConnectionForTesting = () => connection;
+
+// On LiveKit the room owns the roster, and HTTP call state carries stale mute/hand and unconfirmed sessions.
+const withRoomOwnedSessions = (serverUrl: string, channelId: string, call: Call): Call => {
+    const currentCall = getCurrentCall();
+    if (!currentCall || !isLiveKitCurrentCall(serverUrl, channelId)) {
+        return call;
+    }
+
+    return {...call, sessions: currentCall.sessions};
+};
 
 export const loadConfig = async (serverUrl: string, force = false, groupLabel?: RequestGroupLabel) => {
     const now = Date.now();
@@ -76,7 +93,8 @@ export const loadConfig = async (serverUrl: string, force = false, groupLabel?: 
     try {
         const client = NetworkManager.getClient(serverUrl);
         const configs = await Promise.all([client.getCallsConfig(groupLabel), client.getVersion(groupLabel)]);
-        const nextConfig = {...configs[0], version: configs[1], last_retrieved_at: now};
+        const version = configs[1].version ? configs[1] : config.version;
+        const nextConfig = {...configs[0], version, last_retrieved_at: now};
         setConfig(serverUrl, nextConfig);
         return {data: nextConfig};
     } catch (error) {
@@ -103,7 +121,7 @@ export const loadCalls = async (serverUrl: string, userId: string, groupLabel?: 
 
     for (const channel of resp) {
         if (channel.call) {
-            callsResults[channel.channel_id] = createCallAndAddToIds(channel.channel_id, channel.call, ids);
+            callsResults[channel.channel_id] = withRoomOwnedSessions(serverUrl, channel.channel_id, createCallAndAddToIds(channel.channel_id, channel.call, ids));
         }
 
         if (typeof channel.enabled !== 'undefined') {
@@ -143,39 +161,9 @@ export const loadCallForChannel = async (serverUrl: string, channelId: string) =
         fetchUsersByIds(serverUrl, Array.from(ids));
     }
 
-    setCallForChannel(serverUrl, channelId, call, resp.enabled);
+    setCallForChannel(serverUrl, channelId, call && withRoomOwnedSessions(serverUrl, channelId, call), resp.enabled);
 
     return {data: {call, enabled: resp.enabled}};
-};
-
-export const createCallAndAddToIds = (channelId: string, call: CallState, ids?: Set<string>) => {
-    // Don't cast so that we get alerted to missing types
-    const convertedCall: Call = {
-        sessions: Object.values(call.sessions).reduce((accum, cur) => {
-            // Add the id to the set of UserModels we want to ensure are loaded.
-            ids?.add(cur.user_id);
-
-            // Create the CallParticipant
-            accum[cur.session_id] = {
-                userId: cur.user_id,
-                sessionId: cur.session_id,
-                raisedHand: cur.raised_hand || 0,
-                muted: !cur.unmuted,
-            };
-            return accum;
-        }, {} as Dictionary<CallSession>),
-        channelId,
-        id: call.id,
-        startTime: call.start_at,
-        screenOn: call.screen_sharing_session_id,
-        threadId: call.thread_id,
-        ownerId: call.owner_id,
-        hostId: call.host_id,
-        recState: call.recording,
-        dismissed: call.dismissed_notification || {},
-    };
-
-    return convertedCall;
 };
 
 export const loadConfigAndCalls = async (serverUrl: string, userId: string, groupLabel?: RequestGroupLabel) => {
@@ -229,6 +217,7 @@ export const joinCall = async (
     intl: IntlShape,
     title?: string,
     rootId?: string,
+    opts?: {startedByMe?: boolean; startUnmuted?: boolean},
 ): Promise<{ error?: unknown; data?: string }> => {
     // Edge case: calls was disabled when app loaded, and then enabled, but app hasn't
     // reconnected its websocket since then (i.e., hasn't called batchLoadCalls yet)
@@ -237,11 +226,22 @@ export const joinCall = async (
         return {error: 'calls plugin not enabled'};
     }
 
+    const {error: configError} = await loadConfig(serverUrl, true);
+    if (configError) {
+        return {error: configError};
+    }
+
+    const config = getCallsConfig(serverUrl);
+    if (!config.version.version) {
+        return {error: 'unable to determine calls plugin version'};
+    }
+
     if (connection) {
         connection.disconnect();
         connection = null;
     }
-    newCurrentCall(serverUrl, channelId, userId);
+    const transport = getCallsTransport(config);
+    newCurrentCall(serverUrl, channelId, userId, transport, opts);
 
     // Register with the system call UI so the user gets lock-screen /
     // control-center controls if they background or lock mid-call. Skip
@@ -249,15 +249,26 @@ export const joinCall = async (
     // inbound-push flow and the native layer already reported the call.
     const ownedNativeUUID = await registerOutgoingNativeCall(serverUrl, channelId, rootId);
 
+    // Held locally as well as on the module-level `connection`: waitForPeerConnection has its own
+    // 5s timeout that a disconnect doesn't settle early, so a join we've already abandoned can
+    // reject long after the user has started or answered a different call. The close callback and
+    // the catch below must act on *this* connection, never on whatever is current by then.
+    let conn: CallsConnection;
     try {
-        connection = await newConnection(serverUrl, channelId, (err?: Error) => {
-            myselfLeftCall();
+        conn = await newCallConnection(serverUrl, channelId, (err?: Error) => {
+            // Tearing down the call state is only ours to do while we're still the current
+            // connection: an abandoned join closing late would otherwise drop the user out of
+            // the call they moved on to.
+            if (connection === conn) {
+                myselfLeftCall();
+            }
             endNativeCall(serverUrl, channelId, err ? 'failed' : 'remoteEnded');
             if (err) {
                 logDebug('calls: error on close', getFullErrorMessage(err));
                 showErrorAlertOnClose(err, intl);
             }
-        }, setScreenShareURL, hasMicPermission, intl, title, rootId);
+        }, setScreenShareURL, hasMicPermission, intl, transport, title, rootId);
+        connection = conn;
     } catch (error) {
         endNativeCall(serverUrl, channelId, 'failed');
         await forceLogoutIfNecessary(serverUrl, error);
@@ -265,7 +276,7 @@ export const joinCall = async (
     }
 
     try {
-        const sessionId = await connection.waitForPeerConnection();
+        const sessionId = await conn.waitForPeerConnection();
 
         setCurrentCallConnected(channelId, sessionId);
         reportNativeCallConnected(ownedNativeUUID);
@@ -290,9 +301,30 @@ export const joinCall = async (
 
         return {data: channelId};
     } catch (e) {
-        connection.disconnect();
-        connection = null;
+        conn.disconnect();
+        if (connection === conn) {
+            connection = null;
+        }
         return {error: `unable to connect to the voice call: ${e}`};
+    }
+};
+
+// Opens call screen immediately; shows 'Connecting' until joined.
+export const openOutgoingCallScreen = (serverUrl: string, channelId: string) => {
+    startOutgoingCall(serverUrl, channelId);
+    navigateToScreen(Screens.CALL);
+};
+
+export const joinCallAndOpenCallScreen = async (intl: IntlShape, serverUrl: string, channelId: string) => {
+    setJoiningChannelId(channelId);
+    try {
+        const joined = await leaveAndJoinWithAlert(intl, serverUrl, channelId);
+        if (joined) {
+            navigateToScreen(Screens.CALL);
+        }
+        return joined;
+    } finally {
+        setJoiningChannelId(null);
     }
 };
 
@@ -311,8 +343,18 @@ export const leaveCallConfirmation = async (
     serverUrl: string,
     channelId: string,
     leaveCb?: () => void) => {
-    const showHostControls = (isHost || isAdmin) && otherParticipants;
-    const ret = await endCallConfirmationAlert(intl, showHostControls) as EndCallReturn;
+    const database = DatabaseManager.serverDatabases[serverUrl]?.database;
+    const channel = database ? await getChannelById(database, channelId) : undefined;
+    const isNotDMChannel = Boolean(channel) && !isDMChannel(channel?.type);
+
+    const showHostControls = isNotDMChannel && (isHost || isAdmin) && otherParticipants;
+    if (!showHostControls) {
+        leaveCall();
+        leaveCb?.();
+        return;
+    }
+
+    const ret = await endCallConfirmationAlert(intl) as EndCallReturn;
     switch (ret) {
         case EndCallReturn.Cancel:
             return;
@@ -334,10 +376,12 @@ export const muteMyself = () => {
 };
 
 export const unmuteMyself = () => {
-    if (connection) {
-        connection.unmute();
-        mirrorMuteToNativeCall(false);
+    if (!connection) {
+        return;
     }
+
+    connection.unmute();
+    mirrorMuteToNativeCall(false);
 };
 
 export const initializeVoiceTrack = () => {
@@ -514,7 +558,17 @@ export const handleCallsSlashCommand = async (value: string, serverUrl: string, 
                 };
             }
             const title = tokens.length > 2 ? tokens.slice(2).join(' ') : undefined;
-            await leaveAndJoinWithAlert(intl, serverUrl, channelId, title, rootId);
+
+            const openImmediatelyForDM = channelType === General.DM_CHANNEL && !getCurrentCall();
+            if (openImmediatelyForDM) {
+                openOutgoingCallScreen(serverUrl, channelId);
+            }
+
+            const started = await leaveAndJoinWithAlert(intl, serverUrl, channelId, title, rootId);
+            if (openImmediatelyForDM && !started) {
+                await cancelOutgoingCall(serverUrl, channelId);
+            }
+
             return {handled: true};
         }
         case 'join': {
@@ -733,6 +787,10 @@ export const switchToCallThread = async (serverUrl: string, rootId: string, titl
         if (channel?.teamId && currentTeamId !== channel.teamId) {
             await setCurrentTeamId(operator, channel.teamId);
         }
+
+        // Set the currently viewed thread id to the call's thread root id.
+        EphemeralStore.setCurrentThreadId(rootId);
+
         if (activeUrl === serverUrl) {
             await dismissAllRoutesAndPopToScreen(Screens.THREAD, {rootId, title, channelName: channel?.displayName || ''});
             return;

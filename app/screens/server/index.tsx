@@ -8,12 +8,13 @@ import {defineMessage, useIntl} from 'react-intl';
 import {Alert, BackHandler, View} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-controller';
 import Animated from 'react-native-reanimated';
+import urlParse from 'url-parse';
 
 import {doPing} from '@actions/remote/general';
 import {fetchConfigAndLicense} from '@actions/remote/systems';
 import LocalConfig from '@assets/config.json';
 import AppVersion from '@components/app_version';
-import {Screens, Launch, DeepLink} from '@constants';
+import {Launch, DeepLink} from '@constants';
 import useDidMount from '@hooks/did_mount';
 import {useScreenTransitionAnimation} from '@hooks/screen_transition_animation';
 import {getServerCredentials} from '@init/credentials';
@@ -23,9 +24,10 @@ import SecurityManager from '@managers/security_manager';
 import {getServerByDisplayName, getServerByIdentifier} from '@queries/app/servers';
 import Background from '@screens/background';
 import {navigateBack, navigateToScreen} from '@screens/navigation';
-import {getErrorMessage} from '@utils/errors';
+import EphemeralStore from '@store/ephemeral_store';
+import {getErrorMessage, preauthSecretInvalidMessage} from '@utils/errors';
 import {canReceiveNotifications} from '@utils/push_proxy';
-import {loginOptions} from '@utils/server';
+import {getLoginScreen, loginOptions} from '@utils/server';
 import {changeOpacity, makeStyleSheetFromTheme} from '@utils/theme';
 import {getServerUrlAfterRedirect, isValidUrl, sanitizeUrl} from '@utils/url';
 
@@ -183,7 +185,15 @@ const Server = ({
     });
 
     const displayLogin = (serverUrl: string, config: ClientConfig, license: ClientLicense) => {
-        const {enabledSSOs, hasLoginForm, numberSSOs, ssoOptions} = loginOptions(config, license);
+        const {enabledSSOs, hasLoginForm, ssoOptions} = loginOptions(config, license);
+        const {screen, ssoType} = getLoginScreen(enabledSSOs, hasLoginForm);
+        const trimmedSecret = preauthSecret.trim();
+        if (trimmedSecret) {
+            // Not persisted until a session exists — keep out of Expo Router params.
+            EphemeralStore.setPendingPreauthSecret(serverUrl, trimmedSecret);
+        } else {
+            EphemeralStore.clearPendingPreauthSecret(serverUrl);
+        }
         const passProps = {
             config,
             extra,
@@ -192,19 +202,12 @@ const Server = ({
             launchType,
             license,
             serverDisplayName: displayName,
-            serverPreauthSecret: preauthSecret.trim() || undefined,
             serverUrl,
             ssoOptions,
+            ssoType,
             theme,
             isModal,
         };
-
-        const redirectSSO = !hasLoginForm && numberSSOs === 1;
-        const screen = redirectSSO ? Screens.SSO : Screens.LOGIN;
-        if (redirectSSO) {
-            // @ts-expect-error ssoType not in definition
-            passProps.ssoType = enabledSSOs[0];
-        }
 
         // if deeplink is of type server removing the deeplink info on new login
         if (extra?.type === DeepLink.Server) {
@@ -295,6 +298,16 @@ const Server = ({
         return true;
     };
 
+    // If the URL has a path (e.g. a pasted channel URL), retry with the last path
+    // segment stripped so we fall back to the server's base URL.
+    const retryWithBaseUrl = (currentUrl: string) => {
+        if (urlParse(currentUrl).pathname === '/') {
+            return false;
+        }
+        pingServer(currentUrl.substring(0, currentUrl.lastIndexOf('/')));
+        return true;
+    };
+
     const pingServer = async (pingUrl: string, retryWithHttp = true) => {
         let canceled = false;
         setConnecting(true);
@@ -330,10 +343,7 @@ const Server = ({
 
         if (result.error) {
             if (result.isPreauthError) {
-                setPreauthSecretError(intl.formatMessage({
-                    id: 'mobile.server.preauth_secret.invalid',
-                    defaultMessage: 'Authentication secret is invalid. Try again or contact your admin.',
-                }));
+                setPreauthSecretError(intl.formatMessage(preauthSecretInvalidMessage));
                 setShowAdvancedOptions(true);
             } else {
                 setUrlError(getErrorMessage(result.error, intl));
@@ -355,7 +365,14 @@ const Server = ({
         const pushProxyVerification = result.canReceiveNotifications as string;
 
         const data = await fetchConfigAndLicense(headRequest.url, true);
+        if (canceled) {
+            return;
+        }
+
         if (data.error) {
+            if (retryWithBaseUrl(headRequest.url)) {
+                return;
+            }
             setButtonDisabled(true);
             setUrlError(getErrorMessage(data.error, intl));
             setConnecting(false);
@@ -363,6 +380,9 @@ const Server = ({
         }
 
         if (!data.config?.DiagnosticId) {
+            if (retryWithBaseUrl(headRequest.url)) {
+                return;
+            }
             setUrlError(formatMessage({
                 id: 'mobile.diagnostic_id.empty',
                 defaultMessage: 'A DiagnosticId value is missing for this server. Contact your system admin to review this value and restart the server.',

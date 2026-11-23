@@ -172,7 +172,7 @@ jest.mock('@mattermost/calls-native', () => ({
     },
 }));
 
-jest.mock('react-native-webrtc', () => {
+jest.mock('@livekit/react-native-webrtc', () => {
     const getTracks = jest.fn(() => []);
     const getUserMedia = jest.fn(() => Promise.resolve({getTracks}));
     return {
@@ -183,9 +183,58 @@ jest.mock('react-native-webrtc', () => {
         MediaStream: jest.fn(),
         MediaStreamTrack: jest.fn(),
         RTCSessionDescription: jest.fn(),
+        RTCView: jest.fn(),
         registerGlobals: jest.fn(),
     };
 });
+
+jest.mock('@livekit/react-native', () => ({
+    registerGlobals: jest.fn(),
+}));
+
+// Enum values mirror livekit-client's own enums; Room and LocalAudioTrack are left as
+// bare mocks so individual tests can drive them via mockImplementation.
+jest.mock('livekit-client', () => ({
+    Room: jest.fn(),
+    LocalAudioTrack: jest.fn(),
+    AudioPresets: {speech: {maxBitrate: 24000}},
+    ConnectionQuality: {
+        Excellent: 'excellent',
+        Good: 'good',
+        Poor: 'poor',
+        Lost: 'lost',
+        Unknown: 'unknown',
+    },
+    Track: {
+        Source: {
+            Microphone: 'microphone',
+            ScreenShare: 'screen_share',
+            ScreenShareAudio: 'screen_share_audio',
+        },
+    },
+    RoomEvent: {
+        Connected: 'connected',
+        Disconnected: 'disconnected',
+        TrackMuted: 'trackMuted',
+        TrackUnmuted: 'trackUnmuted',
+        LocalTrackPublished: 'localTrackPublished',
+        TrackSubscribed: 'trackSubscribed',
+        TrackUnsubscribed: 'trackUnsubscribed',
+        ActiveSpeakersChanged: 'activeSpeakersChanged',
+        ParticipantAttributesChanged: 'participantAttributesChanged',
+        DataReceived: 'dataReceived',
+        ConnectionQualityChanged: 'connectionQualityChanged',
+        ParticipantConnected: 'participantConnected',
+        ParticipantDisconnected: 'participantDisconnected',
+        RoomMetadataChanged: 'roomMetadataChanged',
+    },
+    DisconnectReason: {
+        CLIENT_INITIATED: 1,
+        SERVER_SHUTDOWN: 3,
+        PARTICIPANT_REMOVED: 4,
+        ROOM_DELETED: 5,
+    },
+}));
 
 jest.mock('@nozbe/watermelondb/utils/common/randomId/randomId', () => ({}));
 jest.mock('@nozbe/watermelondb/react/withObservables/garbageCollector', () => {
@@ -320,6 +369,9 @@ jest.doMock('react-native', () => {
             getWindowDimensions: jest.fn().mockReturnValue({width: 426, height: 952}),
 
             deleteDatabaseDirectory: jest.fn(),
+
+            beginDatabaseActivity: jest.fn().mockResolvedValue('token-1'),
+            endDatabaseActivity: jest.fn(),
         },
         APIClient: {
             getConstants: () => ({
@@ -586,18 +638,21 @@ jest.mock('react-native-share', () => ({
 }));
 
 jest.mock('@mattermost/react-native-emm', () => ({
+    AuthenticationOutcome: {
+        Failed: 'E_AUTH_FAILED',
+        Cancelled: 'E_CANCELLED',
+        Indeterminate: 'E_INDETERMINATE',
+    },
     addListener: jest.fn(),
-    authenticate: async () => {
-        return true;
-    },
+    applyBlurEffect: jest.fn(),
+    authenticate: jest.fn(async () => true),
+    enableBlurScreen: jest.fn(),
+    exitApp: jest.fn(),
     getManagedConfig: <T>() => ({} as T),
-    isDeviceSecured: async () => {
-        return true;
-    },
-    openSecuritySettings: () => jest.fn(),
-    setAppGroupId: () => {
-        return '';
-    },
+    isDeviceSecured: jest.fn(async () => true),
+    openSecuritySettings: jest.fn(),
+    removeBlurEffect: jest.fn(),
+    setAppGroupId: jest.fn(() => ''),
     useManagedConfig: () => ({}),
 }));
 

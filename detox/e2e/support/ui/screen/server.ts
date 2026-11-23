@@ -11,7 +11,6 @@ class ServerScreen {
         closeButton: 'close.server.button',
         headerTitleAddServer: 'server_header.title.add_server',
         headerTitleConnectToServer: 'server_header.title.connect_to_server',
-        headerWelcome: 'server_header.welcome',
         headerDescription: 'server_header.description',
         serverUrlInput: 'server_form.server_url.input',
         serverUrlInputError: 'server_form.server_url.input.error',
@@ -31,7 +30,6 @@ class ServerScreen {
     closeButton = element(by.id(this.testID.closeButton));
     headerTitleAddServer = element(by.id(this.testID.headerTitleAddServer));
     headerTitleConnectToServer = element(by.id(this.testID.headerTitleConnectToServer));
-    headerWelcome = element(by.id(this.testID.headerWelcome));
     headerDescription = element(by.id(this.testID.headerDescription));
 
     serverUrlInput = element(by.id(this.testID.serverUrlInput));
@@ -211,6 +209,15 @@ class ServerScreen {
     };
 
     tapConnectButton = async () => {
+        // The connect button swaps its testID rather than staying put and going grey:
+        // server/form.tsx renders 'server_form.connect.button.disabled' while the form is
+        // invalid and 'server_form.connect.button' once it is not. buttonDisabled starts
+        // true (server/index.tsx) and flips in a state update after the URL is entered, so
+        // tapping straight after replaceText races that update and Detox reports
+        // "No elements found for MATCHER(id == server_form.connect.button)" -- which reads
+        // like a missing screen but only means the button is still disabled.
+        // Wait for the enabled id before tapping. (MM-T4691_5, and _6/_7 which cascade off it.)
+        await waitFor(this.connectButton).toExist().withTimeout(timeouts.TEN_SEC);
         await this.connectButton.tap();
         await wait(timeouts.ONE_SEC);
     };
@@ -242,25 +249,20 @@ class ServerScreen {
         await this.enterPreauthSecret(preauthSecret);
 
         // Connect
-        if (isAndroid()) {
-            await this.tapConnectButton();
+        await this.tapConnectButton();
 
-            // Dismiss "Notifications cannot be received from this server" dialog if it appears.
-            try {
-                await waitFor(Alert.notificationsCannotBeReceivedTitle).toExist().withTimeout(timeouts.TEN_SEC);
-                await element(by.text('Okay')).tap();
-            } catch {
-                // Dialog did not appear — proceed normally
-            }
+        if (isAndroid()) {
+            // Same routine connectToServer uses. A single dismissal attempt is not enough:
+            // the push-proxy alert can animate in after the probe window, and a tap that
+            // misses leaves it covering the login form.
+            await this.waitForAndroidLoginAvailable(timeouts.ONE_MIN);
+            return;
         }
-        if (isIos()) {
-            await this.tapConnectButton();
-            await this.dismissIosNotificationsAlert();
-        }
+
+        await this.dismissIosNotificationsAlert();
 
         // Wait for the login form to appear after server connection with preauth.
-        const timeout = isAndroid() ? timeouts.ONE_MIN : timeouts.HALF_MIN;
-        await waitFor(this.usernameInput).toExist().withTimeout(timeout);
+        await waitFor(this.usernameInput).toExist().withTimeout(timeouts.HALF_MIN);
     };
 }
 
