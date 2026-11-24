@@ -152,7 +152,7 @@ const enhanced = withObservables([], ({combinedPost, post, showAddReaction, sour
     const canMarkAsUnread = combineLatest([currentUser, channelIsArchived]).pipe(
         switchMap(([user, isArchived]) => of$(
             !isArchived && (
-                (user?.id !== post.userId && !isSystemMessage(post)) || isFromWebhook(post)
+                (Boolean(user) && !isSystemMessage(post) && !isBoRPost(post)) || isFromWebhook(post)
             ),
         )),
     );

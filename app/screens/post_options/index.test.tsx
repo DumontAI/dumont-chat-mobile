@@ -232,8 +232,8 @@ describe('PostOptions', () => {
             expect(screen.queryByText('Reply')).toBeVisible();
             expect(screen.queryByText('Edit')).toBeVisible();
 
-            // cannot mark own post as unread in the mobile app.
-            expect(screen.queryByText('Mark as Unread')).not.toBeVisible();
+            // the web allows marking your own message unread, so mobile does too.
+            expect(screen.queryByText('Mark as Unread')).toBeVisible();
             expect(screen.queryByText('Follow Message')).not.toBeVisible();
         });
     });
